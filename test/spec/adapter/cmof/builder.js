@@ -8,7 +8,7 @@ import {
 
 import fs from 'fs';
 
-import CmofParser from 'cmof-parser';
+const parseFile = require('cmof-parser');
 
 
 export default function Builder() {
@@ -20,7 +20,7 @@ export default function Builder() {
   };
 
   function getPackage() {
-    var elementsById = desc.byId;
+    var elementsById = desc.elementsById;
     return elementsById['_0'];
   }
 
@@ -107,7 +107,7 @@ export default function Builder() {
 
     var elementParts = elementName.split('#');
 
-    var elementsById = desc.byId;
+    var elementsById = desc.elementsById;
 
     var element = elementsById[elementParts[0]];
 
@@ -156,22 +156,46 @@ export default function Builder() {
     });
   }
 
-  function parse(file, postParse, done) {
+  async function parse(file, postParse, done) {
 
-    new CmofParser({ clean: true }).parseFile(file, function(err, _desc) {
-      if (err) {
-        done(err);
-      } else {
-        desc = _desc;
-
-        try {
-          postParse(getPackage(), desc);
-          done(null);
-        } catch (e) {
-          done(e);
-        }
+    const options = {
+      clean: true,
+      prefixNamespaces: {
+        'BPMN20.cmof': 'bpmn',
+        'BPMNDI.cmof': 'bpmndi',
+        'DC.cmof': 'dc',
+        'DI.cmof': 'di'
       }
-    });
+    };
+
+    const parsed = await parseFile(fs.readFileSync(file, 'utf8'), options);
+
+    desc = parsed;
+
+    // console.log('parsed', parsed);
+
+    try {
+      postParse(getPackage(), parsed);
+
+      done(null);
+    } catch (err) {
+      done(err);
+    }
+
+    // new CmofParser({ clean: true }).parseFile(file, function(err, _desc) {
+    //   if (err) {
+    //     done(err);
+    //   } else {
+    //     desc = _desc;
+
+    //     try {
+    //       postParse(getPackage(), desc);
+    //       done(null);
+    //     } catch (e) {
+    //       done(e);
+    //     }
+    //   }
+    // });
   }
 
   this.parse = parse;

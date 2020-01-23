@@ -11,7 +11,7 @@ describe('moddle BPMN 2.0 json', function() {
 
   describe('generate simple model', function() {
 
-    it('transform BPMN20.cmof', function(done) {
+    it.only('transform BPMN20.cmof', function(done) {
 
       var builder = new Builder();
 

@@ -1,6 +1,6 @@
 {
-  "name": "DI",
   "uri": "http://www.omg.org/spec/DD/20100524/DI",
+  "prefix": "di",
   "types": [
     {
       "name": "DiagramElement",
@@ -35,7 +35,7 @@
           "isReadOnly": true,
           "isVirtual": true,
           "isReference": true,
-          "type": "Element"
+          "type": "http://schema.omg.org/spec/MOF/2.0/cmof.xml:Element"
         },
         {
           "name": "style",
@@ -48,8 +48,8 @@
           "name": "ownedElement",
           "type": "DiagramElement",
           "isReadOnly": true,
-          "isVirtual": true,
-          "isMany": true
+          "isMany": true,
+          "isVirtual": true
         }
       ]
     },
@@ -127,8 +127,8 @@
           "name": "ownedStyle",
           "type": "Style",
           "isReadOnly": true,
-          "isVirtual": true,
-          "isMany": true
+          "isMany": true,
+          "isVirtual": true
         }
       ]
     },
@@ -172,8 +172,8 @@
           "type": "Label",
           "isReadOnly": true,
           "subsettedProperty": "DiagramElement-ownedElement",
-          "isVirtual": true,
-          "isMany": true
+          "isMany": true,
+          "isVirtual": true
         }
       ]
     },
@@ -189,8 +189,8 @@
           "type": "Label",
           "isReadOnly": true,
           "subsettedProperty": "DiagramElement-ownedElement",
-          "isVirtual": true,
-          "isMany": true
+          "isMany": true,
+          "isVirtual": true
         }
       ]
     },
@@ -231,7 +231,6 @@
     }
   ],
   "associations": [],
-  "prefix": "di",
   "xml": {
     "tagAlias": "lowerCase"
   }

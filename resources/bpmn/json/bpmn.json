@@ -1,7 +1,2463 @@
 {
-  "name": "BPMN20",
   "uri": "http://www.omg.org/spec/BPMN/20100524/MODEL",
-  "associations": [],
+  "prefix": "bpmn",
+  "associations": [
+    {
+      "name": "A_errorRefs_operation",
+      "visibility": "private",
+      "memberEnd": "Operation-errorRefs A_errorRefs_operation-operation",
+      "ownedEnd": {
+        "name": "operation",
+        "type": "Operation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_errorRefs_operation",
+        "association": "A_errorRefs_operation",
+        "id": "A_errorRefs_operation-operation"
+      }
+    },
+    {
+      "name": "A_inMessageRef_operation",
+      "visibility": "private",
+      "memberEnd": "Operation-inMessageRef A_inMessageRef_operation-operation",
+      "ownedEnd": {
+        "name": "operation",
+        "type": "Operation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_inMessageRef_operation",
+        "association": "A_inMessageRef_operation",
+        "id": "A_inMessageRef_operation-operation"
+      }
+    },
+    {
+      "name": "A_outMessageRef_operation",
+      "visibility": "private",
+      "memberEnd": "Operation-outMessageRef A_outMessageRef_operation-operation",
+      "ownedEnd": {
+        "name": "operation",
+        "type": "Operation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_outMessageRef_operation",
+        "association": "A_outMessageRef_operation",
+        "id": "A_outMessageRef_operation-operation"
+      }
+    },
+    {
+      "name": "A_operations_interface",
+      "visibility": "private",
+      "memberEnd": "Interface-operations A_operations_interface-interface",
+      "ownedEnd": {
+        "name": "interface",
+        "type": "Interface",
+        "owningAssociation": "A_operations_interface",
+        "association": "A_operations_interface",
+        "id": "A_operations_interface-interface"
+      }
+    },
+    {
+      "name": "A_definitionalCollaborationRef_process",
+      "visibility": "private",
+      "memberEnd": "Process-definitionalCollaborationRef A_definitionalCollaborationRef_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "type": "Process",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_definitionalCollaborationRef_process",
+        "association": "A_definitionalCollaborationRef_process",
+        "id": "A_definitionalCollaborationRef_process-process"
+      }
+    },
+    {
+      "name": "A_partitionElement_lane",
+      "visibility": "private",
+      "memberEnd": "Lane-partitionElement A_partitionElement_lane-lane",
+      "ownedEnd": {
+        "name": "lane",
+        "type": "Lane",
+        "lower": "0",
+        "owningAssociation": "A_partitionElement_lane",
+        "association": "A_partitionElement_lane",
+        "id": "A_partitionElement_lane-lane"
+      }
+    },
+    {
+      "name": "A_flowNodeRefs_lanes",
+      "visibility": "private",
+      "memberEnd": "Lane-flowNodeRefs FlowNode-lanes"
+    },
+    {
+      "name": "A_partitionElementRef_lane",
+      "visibility": "private",
+      "memberEnd": "Lane-partitionElementRef A_partitionElementRef_lane-lane",
+      "ownedEnd": {
+        "name": "lane",
+        "type": "Lane",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_partitionElementRef_lane",
+        "association": "A_partitionElementRef_lane",
+        "id": "A_partitionElementRef_lane-lane"
+      }
+    },
+    {
+      "name": "A_auditing_process",
+      "visibility": "private",
+      "memberEnd": "Process-auditing A_auditing_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "type": "Process",
+        "lower": "0",
+        "owningAssociation": "A_auditing_process",
+        "association": "A_auditing_process",
+        "id": "A_auditing_process-process"
+      }
+    },
+    {
+      "name": "A_monitoring_process",
+      "visibility": "private",
+      "memberEnd": "Process-monitoring A_monitoring_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "type": "Process",
+        "lower": "0",
+        "owningAssociation": "A_monitoring_process",
+        "association": "A_monitoring_process",
+        "id": "A_monitoring_process-process"
+      }
+    },
+    {
+      "name": "A_properties_process",
+      "visibility": "private",
+      "memberEnd": "Process-properties A_properties_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "type": "Process",
+        "lower": "0",
+        "owningAssociation": "A_properties_process",
+        "association": "A_properties_process",
+        "id": "A_properties_process-process"
+      }
+    },
+    {
+      "name": "A_lanes_laneSet",
+      "visibility": "private",
+      "memberEnd": "LaneSet-lanes A_lanes_laneSet-laneSet",
+      "ownedEnd": {
+        "name": "laneSet",
+        "type": "LaneSet",
+        "owningAssociation": "A_lanes_laneSet",
+        "association": "A_lanes_laneSet",
+        "id": "A_lanes_laneSet-laneSet"
+      }
+    },
+    {
+      "name": "A_childLaneSet_parentLane",
+      "visibility": "private",
+      "memberEnd": "Lane-childLaneSet A_childLaneSet_parentLane-parentLane",
+      "ownedEnd": {
+        "name": "parentLane",
+        "type": "Lane",
+        "lower": "0",
+        "owningAssociation": "A_childLaneSet_parentLane",
+        "association": "A_childLaneSet_parentLane",
+        "id": "A_childLaneSet_parentLane-parentLane"
+      }
+    },
+    {
+      "name": "A_resources_globalTask",
+      "visibility": "private",
+      "memberEnd": "GlobalTask-resources A_resources_globalTask-globalTask",
+      "ownedEnd": {
+        "name": "globalTask",
+        "type": "GlobalTask",
+        "lower": "0",
+        "owningAssociation": "A_resources_globalTask",
+        "association": "A_resources_globalTask",
+        "id": "A_resources_globalTask-globalTask"
+      }
+    },
+    {
+      "name": "A_supports_process",
+      "visibility": "private",
+      "memberEnd": "Process-supports A_supports_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "type": "Process",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_supports_process",
+        "association": "A_supports_process",
+        "id": "A_supports_process-process"
+      }
+    },
+    {
+      "name": "A_resources_process",
+      "visibility": "private",
+      "memberEnd": "Process-resources A_resources_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "visibility": "public",
+        "type": "Process",
+        "lower": "0",
+        "owningAssociation": "A_resources_process",
+        "association": "A_resources_process",
+        "id": "A_resources_process-process"
+      }
+    },
+    {
+      "name": "A_artifacts_process",
+      "visibility": "private",
+      "memberEnd": "Process-artifacts A_artifacts_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "visibility": "public",
+        "type": "Process",
+        "lower": "0",
+        "owningAssociation": "A_artifacts_process",
+        "association": "A_artifacts_process",
+        "id": "A_artifacts_process-process"
+      }
+    },
+    {
+      "name": "A_correlationSubscriptions_process",
+      "visibility": "private",
+      "memberEnd": "Process-correlationSubscriptions A_correlationSubscriptions_process-process",
+      "ownedEnd": {
+        "name": "process",
+        "visibility": "public",
+        "type": "Process",
+        "owningAssociation": "A_correlationSubscriptions_process",
+        "association": "A_correlationSubscriptions_process",
+        "id": "A_correlationSubscriptions_process-process"
+      }
+    },
+    {
+      "name": "A_renderings_usertask",
+      "visibility": "private",
+      "memberEnd": "UserTask-renderings A_renderings_usertask-usertask",
+      "ownedEnd": {
+        "name": "usertask",
+        "type": "UserTask",
+        "lower": "0",
+        "owningAssociation": "A_renderings_usertask",
+        "association": "A_renderings_usertask",
+        "id": "A_renderings_usertask-usertask"
+      }
+    },
+    {
+      "name": "A_renderings_globalUserTask",
+      "visibility": "private",
+      "memberEnd": "GlobalUserTask-renderings A_renderings_globalUserTask-globalUserTask",
+      "ownedEnd": {
+        "name": "globalUserTask",
+        "type": "GlobalUserTask",
+        "lower": "0",
+        "owningAssociation": "A_renderings_globalUserTask",
+        "association": "A_renderings_globalUserTask",
+        "id": "A_renderings_globalUserTask-globalUserTask"
+      }
+    },
+    {
+      "name": "A_activationCondition_complexGateway",
+      "visibility": "private",
+      "memberEnd": "ComplexGateway-activationCondition A_activationCondition_complexGateway-complexGateway",
+      "ownedEnd": {
+        "name": "complexGateway",
+        "type": "ComplexGateway",
+        "lower": "0",
+        "owningAssociation": "A_activationCondition_complexGateway",
+        "association": "A_activationCondition_complexGateway",
+        "id": "A_activationCondition_complexGateway-complexGateway"
+      }
+    },
+    {
+      "name": "A_default_inclusiveGateway",
+      "visibility": "private",
+      "memberEnd": "InclusiveGateway-default A_default_inclusiveGateway-inclusiveGateway",
+      "ownedEnd": {
+        "name": "inclusiveGateway",
+        "type": "InclusiveGateway",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_default_inclusiveGateway",
+        "association": "A_default_inclusiveGateway",
+        "id": "A_default_inclusiveGateway-inclusiveGateway"
+      }
+    },
+    {
+      "name": "A_default_exclusiveGateway",
+      "visibility": "private",
+      "memberEnd": "ExclusiveGateway-default A_default_exclusiveGateway-exclusiveGateway",
+      "ownedEnd": {
+        "name": "exclusiveGateway",
+        "type": "ExclusiveGateway",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_default_exclusiveGateway",
+        "association": "A_default_exclusiveGateway",
+        "id": "A_default_exclusiveGateway-exclusiveGateway"
+      }
+    },
+    {
+      "name": "A_default_complexGateway",
+      "visibility": "private",
+      "memberEnd": "ComplexGateway-default A_default_complexGateway-complexGateway",
+      "ownedEnd": {
+        "name": "complexGateway",
+        "type": "ComplexGateway",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_default_complexGateway",
+        "association": "A_default_complexGateway",
+        "id": "A_default_complexGateway-complexGateway"
+      }
+    },
+    {
+      "name": "A_valueRef_extensionAttributeValue",
+      "visibility": "private",
+      "memberEnd": "ExtensionAttributeValue-valueRef A_valueRef_extensionAttributeValue-extensionAttributeValue",
+      "ownedEnd": {
+        "name": "extensionAttributeValue",
+        "type": "ExtensionAttributeValue",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_valueRef_extensionAttributeValue",
+        "association": "A_valueRef_extensionAttributeValue",
+        "id": "A_valueRef_extensionAttributeValue-extensionAttributeValue"
+      }
+    },
+    {
+      "name": "A_value_extensionAttributeValue",
+      "visibility": "private",
+      "memberEnd": "ExtensionAttributeValue-value A_value_extensionAttributeValue-extensionAttributeValue",
+      "ownedEnd": {
+        "name": "extensionAttributeValue",
+        "type": "ExtensionAttributeValue",
+        "owningAssociation": "A_value_extensionAttributeValue",
+        "association": "A_value_extensionAttributeValue",
+        "id": "A_value_extensionAttributeValue-extensionAttributeValue"
+      }
+    },
+    {
+      "name": "A_extensionDefinitions_baseElement",
+      "visibility": "private",
+      "memberEnd": "BaseElement-extensionDefinitions A_extensionDefinitions_baseElement-baseElement",
+      "ownedEnd": {
+        "name": "baseElement",
+        "type": "BaseElement",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_extensionDefinitions_baseElement",
+        "association": "A_extensionDefinitions_baseElement",
+        "id": "A_extensionDefinitions_baseElement-baseElement"
+      }
+    },
+    {
+      "name": "A_definition_extension",
+      "visibility": "private",
+      "memberEnd": "Extension-definition A_definition_extension-extension",
+      "ownedEnd": {
+        "name": "extension",
+        "type": "Extension",
+        "owningAssociation": "A_definition_extension",
+        "association": "A_definition_extension",
+        "id": "A_definition_extension-extension"
+      }
+    },
+    {
+      "name": "A_extensionAttributeDefinitions_extensionDefinition",
+      "visibility": "private",
+      "memberEnd": "ExtensionDefinition-extensionAttributeDefinitions ExtensionAttributeDefinition-extensionDefinition"
+    },
+    {
+      "name": "A_extensionValues_baseElement",
+      "visibility": "private",
+      "memberEnd": "BaseElement-extensionValues A_extensionValues_baseElement-baseElement",
+      "ownedEnd": {
+        "name": "baseElement",
+        "type": "BaseElement",
+        "owningAssociation": "A_extensionValues_baseElement",
+        "association": "A_extensionValues_baseElement",
+        "id": "A_extensionValues_baseElement-baseElement"
+      }
+    },
+    {
+      "name": "A_extensionAttributeDefinition_extensionAttributeValue",
+      "visibility": "private",
+      "memberEnd": "ExtensionAttributeValue-extensionAttributeDefinition A_extensionAttributeDefinition_extensionAttributeValue-extensionAttributeValue",
+      "ownedEnd": {
+        "name": "extensionAttributeValue",
+        "type": "ExtensionAttributeValue",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_extensionAttributeDefinition_extensionAttributeValue",
+        "association": "A_extensionAttributeDefinition_extensionAttributeValue",
+        "id": "A_extensionAttributeDefinition_extensionAttributeValue-extensionAttributeValue"
+      }
+    },
+    {
+      "name": "A_documentation_baseElement",
+      "visibility": "private",
+      "memberEnd": "BaseElement-documentation A_documentation_baseElement-baseElement",
+      "ownedEnd": {
+        "name": "baseElement",
+        "type": "BaseElement",
+        "owningAssociation": "A_documentation_baseElement",
+        "association": "A_documentation_baseElement",
+        "id": "A_documentation_baseElement-baseElement"
+      }
+    },
+    {
+      "name": "A_sources_relationship",
+      "visibility": "private",
+      "memberEnd": "Relationship-sources A_sources_relationship-relationship",
+      "ownedEnd": {
+        "name": "relationship",
+        "type": "Relationship",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_sources_relationship",
+        "association": "A_sources_relationship",
+        "id": "A_sources_relationship-relationship"
+      }
+    },
+    {
+      "name": "A_targets_relationship",
+      "visibility": "private",
+      "memberEnd": "Relationship-targets A_targets_relationship-relationship",
+      "ownedEnd": {
+        "name": "relationship",
+        "type": "Relationship",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_targets_relationship",
+        "association": "A_targets_relationship",
+        "id": "A_targets_relationship-relationship"
+      }
+    },
+    {
+      "name": "A_dataInputAssociation_throwEvent",
+      "visibility": "private",
+      "memberEnd": "ThrowEvent-dataInputAssociation A_dataInputAssociation_throwEvent-throwEvent",
+      "ownedEnd": {
+        "name": "throwEvent",
+        "type": "ThrowEvent",
+        "lower": "0",
+        "owningAssociation": "A_dataInputAssociation_throwEvent",
+        "association": "A_dataInputAssociation_throwEvent",
+        "id": "A_dataInputAssociation_throwEvent-throwEvent"
+      }
+    },
+    {
+      "name": "A_dataOutputAssociation_catchEvent",
+      "visibility": "private",
+      "memberEnd": "CatchEvent-dataOutputAssociation A_dataOutputAssociation_catchEvent-catchEvent",
+      "ownedEnd": {
+        "name": "catchEvent",
+        "type": "CatchEvent",
+        "lower": "0",
+        "owningAssociation": "A_dataOutputAssociation_catchEvent",
+        "association": "A_dataOutputAssociation_catchEvent",
+        "id": "A_dataOutputAssociation_catchEvent-catchEvent"
+      }
+    },
+    {
+      "name": "A_activityRef_compensateEventDefinition",
+      "visibility": "private",
+      "memberEnd": "CompensateEventDefinition-activityRef A_activityRef_compensateEventDefinition-compensateEventDefinition",
+      "ownedEnd": {
+        "name": "compensateEventDefinition",
+        "type": "CompensateEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_activityRef_compensateEventDefinition",
+        "association": "A_activityRef_compensateEventDefinition",
+        "id": "A_activityRef_compensateEventDefinition-compensateEventDefinition"
+      }
+    },
+    {
+      "name": "A_inputSet_throwEvent",
+      "visibility": "private",
+      "memberEnd": "ThrowEvent-inputSet A_inputSet_throwEvent-throwEvent",
+      "ownedEnd": {
+        "name": "throwEvent",
+        "type": "ThrowEvent",
+        "lower": "0",
+        "owningAssociation": "A_inputSet_throwEvent",
+        "association": "A_inputSet_throwEvent",
+        "id": "A_inputSet_throwEvent-throwEvent"
+      }
+    },
+    {
+      "name": "A_structureRef_signal",
+      "visibility": "private",
+      "memberEnd": "Signal-structureRef A_structureRef_signal-signal",
+      "ownedEnd": {
+        "name": "signal",
+        "type": "Signal",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_structureRef_signal",
+        "association": "A_structureRef_signal",
+        "id": "A_structureRef_signal-signal"
+      }
+    },
+    {
+      "name": "A_messageRef_messageEventDefinition",
+      "visibility": "private",
+      "memberEnd": "MessageEventDefinition-messageRef A_messageRef_messageEventDefinition-messageEventDefinition",
+      "ownedEnd": {
+        "name": "messageEventDefinition",
+        "type": "MessageEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageRef_messageEventDefinition",
+        "association": "A_messageRef_messageEventDefinition",
+        "id": "A_messageRef_messageEventDefinition-messageEventDefinition"
+      }
+    },
+    {
+      "name": "A_outputSet_catchEvent",
+      "visibility": "private",
+      "memberEnd": "CatchEvent-outputSet A_outputSet_catchEvent-catchEvent",
+      "ownedEnd": {
+        "name": "catchEvent",
+        "type": "CatchEvent",
+        "lower": "0",
+        "owningAssociation": "A_outputSet_catchEvent",
+        "association": "A_outputSet_catchEvent",
+        "id": "A_outputSet_catchEvent-catchEvent"
+      }
+    },
+    {
+      "name": "A_structureRef_escalation",
+      "visibility": "private",
+      "memberEnd": "Escalation-structureRef A_structureRef_escalation-escalation",
+      "ownedEnd": {
+        "name": "escalation",
+        "type": "Escalation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_structureRef_escalation",
+        "association": "A_structureRef_escalation",
+        "id": "A_structureRef_escalation-escalation"
+      }
+    },
+    {
+      "name": "A_eventDefinitionRefs_throwEvent",
+      "visibility": "private",
+      "memberEnd": "ThrowEvent-eventDefinitionRefs A_eventDefinitionRefs_throwEvent-throwEvent",
+      "ownedEnd": {
+        "name": "throwEvent",
+        "type": "ThrowEvent",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_eventDefinitionRefs_throwEvent",
+        "association": "A_eventDefinitionRefs_throwEvent",
+        "id": "A_eventDefinitionRefs_throwEvent-throwEvent"
+      }
+    },
+    {
+      "name": "A_eventDefinitionRefs_catchEvent",
+      "visibility": "private",
+      "memberEnd": "CatchEvent-eventDefinitionRefs A_eventDefinitionRefs_catchEvent-catchEvent",
+      "ownedEnd": {
+        "name": "catchEvent",
+        "type": "CatchEvent",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_eventDefinitionRefs_catchEvent",
+        "association": "A_eventDefinitionRefs_catchEvent",
+        "id": "A_eventDefinitionRefs_catchEvent-catchEvent"
+      }
+    },
+    {
+      "name": "A_errorRef_errorEventDefinition",
+      "visibility": "private",
+      "memberEnd": "ErrorEventDefinition-errorRef A_errorRef_errorEventDefinition-errorEventDefinition",
+      "ownedEnd": {
+        "name": "errorEventDefinition",
+        "type": "ErrorEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_errorRef_errorEventDefinition",
+        "association": "A_errorRef_errorEventDefinition",
+        "id": "A_errorRef_errorEventDefinition-errorEventDefinition"
+      }
+    },
+    {
+      "name": "A_escalationRef_escalationEventDefinition",
+      "visibility": "private",
+      "memberEnd": "EscalationEventDefinition-escalationRef A_escalationRef_escalationEventDefinition-escalationEventDefinition",
+      "ownedEnd": {
+        "name": "escalationEventDefinition",
+        "type": "EscalationEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_escalationRef_escalationEventDefinition",
+        "association": "A_escalationRef_escalationEventDefinition",
+        "id": "A_escalationRef_escalationEventDefinition-escalationEventDefinition"
+      }
+    },
+    {
+      "name": "A_signalRef_signalEventDefinition",
+      "visibility": "private",
+      "memberEnd": "SignalEventDefinition-signalRef A_signalRef_signalEventDefinition-signalEventDefinition",
+      "ownedEnd": {
+        "name": "signalEventDefinition",
+        "type": "SignalEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_signalRef_signalEventDefinition",
+        "association": "A_signalRef_signalEventDefinition",
+        "id": "A_signalRef_signalEventDefinition-signalEventDefinition"
+      }
+    },
+    {
+      "name": "A_eventDefinitions_throwEvent",
+      "visibility": "private",
+      "memberEnd": "ThrowEvent-eventDefinitions A_eventDefinitions_throwEvent-throwEvent",
+      "ownedEnd": {
+        "name": "throwEvent",
+        "type": "ThrowEvent",
+        "lower": "0",
+        "owningAssociation": "A_eventDefinitions_throwEvent",
+        "association": "A_eventDefinitions_throwEvent",
+        "id": "A_eventDefinitions_throwEvent-throwEvent"
+      }
+    },
+    {
+      "name": "A_eventDefinitions_catchEvent",
+      "visibility": "private",
+      "memberEnd": "CatchEvent-eventDefinitions A_eventDefinitions_catchEvent-catchEvent",
+      "ownedEnd": {
+        "name": "catchEvent",
+        "type": "CatchEvent",
+        "lower": "0",
+        "owningAssociation": "A_eventDefinitions_catchEvent",
+        "association": "A_eventDefinitions_catchEvent",
+        "id": "A_eventDefinitions_catchEvent-catchEvent"
+      }
+    },
+    {
+      "name": "A_dataInputs_throwEvent",
+      "visibility": "private",
+      "memberEnd": "ThrowEvent-dataInputs A_dataInputs_throwEvent-throwEvent",
+      "ownedEnd": {
+        "name": "throwEvent",
+        "type": "ThrowEvent",
+        "lower": "0",
+        "owningAssociation": "A_dataInputs_throwEvent",
+        "association": "A_dataInputs_throwEvent",
+        "id": "A_dataInputs_throwEvent-throwEvent"
+      }
+    },
+    {
+      "name": "A_dataOutputs_catchEvent",
+      "visibility": "private",
+      "memberEnd": "CatchEvent-dataOutputs A_dataOutputs_catchEvent-catchEvent",
+      "ownedEnd": {
+        "name": "catchEvent",
+        "type": "CatchEvent",
+        "lower": "0",
+        "owningAssociation": "A_dataOutputs_catchEvent",
+        "association": "A_dataOutputs_catchEvent",
+        "id": "A_dataOutputs_catchEvent-catchEvent"
+      }
+    },
+    {
+      "name": "A_operationRef_messageEventDefinition",
+      "visibility": "private",
+      "memberEnd": "MessageEventDefinition-operationRef A_operationRef_messageEventDefinition-messageEventDefinition",
+      "ownedEnd": {
+        "name": "messageEventDefinition",
+        "type": "MessageEventDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_operationRef_messageEventDefinition",
+        "association": "A_operationRef_messageEventDefinition",
+        "id": "A_operationRef_messageEventDefinition-messageEventDefinition"
+      }
+    },
+    {
+      "name": "A_condition_conditionalEventDefinition",
+      "visibility": "private",
+      "memberEnd": "ConditionalEventDefinition-condition A_condition_conditionalEventDefinition-conditionalEventDefinition",
+      "ownedEnd": {
+        "name": "conditionalEventDefinition",
+        "type": "ConditionalEventDefinition",
+        "lower": "0",
+        "owningAssociation": "A_condition_conditionalEventDefinition",
+        "association": "A_condition_conditionalEventDefinition",
+        "id": "A_condition_conditionalEventDefinition-conditionalEventDefinition"
+      }
+    },
+    {
+      "name": "A_timeDate_timerEventDefinition",
+      "visibility": "private",
+      "memberEnd": "TimerEventDefinition-timeDate A_timeDate_timerEventDefinition-timerEventDefinition",
+      "ownedEnd": {
+        "name": "timerEventDefinition",
+        "type": "TimerEventDefinition",
+        "lower": "0",
+        "owningAssociation": "A_timeDate_timerEventDefinition",
+        "association": "A_timeDate_timerEventDefinition",
+        "id": "A_timeDate_timerEventDefinition-timerEventDefinition"
+      }
+    },
+    {
+      "name": "A_timeCycle_timerEventDefinition",
+      "visibility": "private",
+      "memberEnd": "TimerEventDefinition-timeCycle A_timeCycle_timerEventDefinition-timerEventDefinition",
+      "ownedEnd": {
+        "name": "timerEventDefinition",
+        "type": "TimerEventDefinition",
+        "lower": "0",
+        "owningAssociation": "A_timeCycle_timerEventDefinition",
+        "association": "A_timeCycle_timerEventDefinition",
+        "id": "A_timeCycle_timerEventDefinition-timerEventDefinition"
+      }
+    },
+    {
+      "name": "A_target_source",
+      "visibility": "private",
+      "memberEnd": "LinkEventDefinition-target LinkEventDefinition-source"
+    },
+    {
+      "name": "A_properties_event",
+      "visibility": "private",
+      "memberEnd": "Event-properties A_properties_event-event",
+      "ownedEnd": {
+        "name": "event",
+        "visibility": "public",
+        "type": "Event",
+        "lower": "0",
+        "owningAssociation": "A_properties_event",
+        "association": "A_properties_event",
+        "id": "A_properties_event-event"
+      }
+    },
+    {
+      "name": "A_timeDuration_timerEventDefinition",
+      "visibility": "private",
+      "memberEnd": "TimerEventDefinition-timeDuration A_timeDuration_timerEventDefinition-timerEventDefinition",
+      "ownedEnd": {
+        "name": "timerEventDefinition",
+        "visibility": "public",
+        "type": "TimerEventDefinition",
+        "lower": "0",
+        "owningAssociation": "A_timeDuration_timerEventDefinition",
+        "association": "A_timeDuration_timerEventDefinition",
+        "id": "A_timeDuration_timerEventDefinition-timerEventDefinition"
+      }
+    },
+    {
+      "name": "A_dataState_itemAwareElement",
+      "visibility": "private",
+      "memberEnd": "ItemAwareElement-dataState A_dataState_itemAwareElement-itemAwareElement",
+      "ownedEnd": {
+        "name": "itemAwareElement",
+        "type": "ItemAwareElement",
+        "owningAssociation": "A_dataState_itemAwareElement",
+        "association": "A_dataState_itemAwareElement",
+        "id": "A_dataState_itemAwareElement-itemAwareElement"
+      }
+    },
+    {
+      "name": "A_operationRef_ioBinding",
+      "visibility": "private",
+      "memberEnd": "InputOutputBinding-operationRef A_operationRef_ioBinding-ioBinding",
+      "ownedEnd": {
+        "name": "ioBinding",
+        "type": "InputOutputBinding",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_operationRef_ioBinding",
+        "association": "A_operationRef_ioBinding",
+        "id": "A_operationRef_ioBinding-ioBinding"
+      }
+    },
+    {
+      "name": "A_sourceRef_dataAssociation",
+      "visibility": "private",
+      "memberEnd": "DataAssociation-sourceRef A_sourceRef_dataAssociation-dataAssociation",
+      "ownedEnd": {
+        "name": "dataAssociation",
+        "type": "DataAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_sourceRef_dataAssociation",
+        "association": "A_sourceRef_dataAssociation",
+        "id": "A_sourceRef_dataAssociation-dataAssociation"
+      }
+    },
+    {
+      "name": "A_targetRef_dataAssociation",
+      "visibility": "private",
+      "memberEnd": "DataAssociation-targetRef A_targetRef_dataAssociation-dataAssociation",
+      "ownedEnd": {
+        "name": "dataAssociation",
+        "type": "DataAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_targetRef_dataAssociation",
+        "association": "A_targetRef_dataAssociation",
+        "id": "A_targetRef_dataAssociation-dataAssociation"
+      }
+    },
+    {
+      "name": "A_transformation_dataAssociation",
+      "visibility": "private",
+      "memberEnd": "DataAssociation-transformation A_transformation_dataAssociation-dataAssociation",
+      "ownedEnd": {
+        "name": "dataAssociation",
+        "type": "DataAssociation",
+        "lower": "0",
+        "owningAssociation": "A_transformation_dataAssociation",
+        "association": "A_transformation_dataAssociation",
+        "id": "A_transformation_dataAssociation-dataAssociation"
+      }
+    },
+    {
+      "name": "A_dataInputRefs_inputSetRefs",
+      "visibility": "private",
+      "memberEnd": "InputSet-dataInputRefs DataInput-inputSetRefs"
+    },
+    {
+      "name": "A_dataOutputRefs_outputSetRefs",
+      "visibility": "private",
+      "memberEnd": "OutputSet-dataOutputRefs DataOutput-outputSetRefs"
+    },
+    {
+      "name": "A_inputSets_inputOutputSpecification",
+      "visibility": "private",
+      "memberEnd": "InputOutputSpecification-inputSets A_inputSets_inputOutputSpecification-inputOutputSpecification",
+      "ownedEnd": {
+        "name": "inputOutputSpecification",
+        "type": "InputOutputSpecification",
+        "owningAssociation": "A_inputSets_inputOutputSpecification",
+        "association": "A_inputSets_inputOutputSpecification",
+        "id": "A_inputSets_inputOutputSpecification-inputOutputSpecification"
+      }
+    },
+    {
+      "name": "A_outputSets_inputOutputSpecification",
+      "visibility": "private",
+      "memberEnd": "InputOutputSpecification-outputSets A_outputSets_inputOutputSpecification-inputOutputSpecification",
+      "ownedEnd": {
+        "name": "inputOutputSpecification",
+        "type": "InputOutputSpecification",
+        "owningAssociation": "A_outputSets_inputOutputSpecification",
+        "association": "A_outputSets_inputOutputSpecification",
+        "id": "A_outputSets_inputOutputSpecification-inputOutputSpecification"
+      }
+    },
+    {
+      "name": "A_dataInputs_inputOutputSpecification",
+      "visibility": "private",
+      "memberEnd": "InputOutputSpecification-dataInputs A_dataInputs_inputOutputSpecification-inputOutputSpecification",
+      "ownedEnd": {
+        "name": "inputOutputSpecification",
+        "type": "InputOutputSpecification",
+        "owningAssociation": "A_dataInputs_inputOutputSpecification",
+        "association": "A_dataInputs_inputOutputSpecification",
+        "id": "A_dataInputs_inputOutputSpecification-inputOutputSpecification"
+      }
+    },
+    {
+      "name": "A_dataOutputs_inputOutputSpecification",
+      "visibility": "private",
+      "memberEnd": "InputOutputSpecification-dataOutputs A_dataOutputs_inputOutputSpecification-inputOutputSpecification",
+      "ownedEnd": {
+        "name": "inputOutputSpecification",
+        "type": "InputOutputSpecification",
+        "owningAssociation": "A_dataOutputs_inputOutputSpecification",
+        "association": "A_dataOutputs_inputOutputSpecification",
+        "id": "A_dataOutputs_inputOutputSpecification-inputOutputSpecification"
+      }
+    },
+    {
+      "name": "A_inputSetRefs_outputSetRefs",
+      "visibility": "private",
+      "memberEnd": "OutputSet-inputSetRefs InputSet-outputSetRefs"
+    },
+    {
+      "name": "A_inputDataRef_inputOutputBinding",
+      "visibility": "private",
+      "memberEnd": "InputOutputBinding-inputDataRef A_inputDataRef_inputOutputBinding-inputOutputBinding",
+      "ownedEnd": {
+        "name": "inputOutputBinding",
+        "type": "InputOutputBinding",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_inputDataRef_inputOutputBinding",
+        "association": "A_inputDataRef_inputOutputBinding",
+        "id": "A_inputDataRef_inputOutputBinding-inputOutputBinding"
+      }
+    },
+    {
+      "name": "A_outputDataRef_inputOutputBinding",
+      "visibility": "private",
+      "memberEnd": "InputOutputBinding-outputDataRef A_outputDataRef_inputOutputBinding-inputOutputBinding",
+      "ownedEnd": {
+        "name": "inputOutputBinding",
+        "type": "InputOutputBinding",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_outputDataRef_inputOutputBinding",
+        "association": "A_outputDataRef_inputOutputBinding",
+        "id": "A_outputDataRef_inputOutputBinding-inputOutputBinding"
+      }
+    },
+    {
+      "name": "A_whileExecutingInputRefs_inputSetWithWhileExecuting",
+      "visibility": "private",
+      "memberEnd": "InputSet-whileExecutingInputRefs DataInput-inputSetWithWhileExecuting"
+    },
+    {
+      "name": "A_optionalInputRefs_inputSetWithOptional",
+      "visibility": "private",
+      "memberEnd": "InputSet-optionalInputRefs DataInput-inputSetWithOptional"
+    },
+    {
+      "name": "A_outputSetWithOptional_optionalOutputRefs",
+      "visibility": "private",
+      "memberEnd": "DataOutput-outputSetWithOptional OutputSet-optionalOutputRefs"
+    },
+    {
+      "name": "A_outputSetWithWhileExecuting_whileExecutingOutputRefs",
+      "visibility": "private",
+      "memberEnd": "DataOutput-outputSetWithWhileExecuting OutputSet-whileExecutingOutputRefs"
+    },
+    {
+      "name": "A_assignment_dataAssociation",
+      "visibility": "private",
+      "memberEnd": "DataAssociation-assignment A_assignment_dataAssociation-dataAssociation",
+      "ownedEnd": {
+        "name": "dataAssociation",
+        "type": "DataAssociation",
+        "owningAssociation": "A_assignment_dataAssociation",
+        "association": "A_assignment_dataAssociation",
+        "id": "A_assignment_dataAssociation-dataAssociation"
+      }
+    },
+    {
+      "name": "A_dataStoreRef_dataStoreReference",
+      "visibility": "private",
+      "memberEnd": "DataStoreReference-dataStoreRef A_dataStoreRef_dataStoreReference-dataStoreReference",
+      "ownedEnd": {
+        "name": "dataStoreReference",
+        "type": "DataStoreReference",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_dataStoreRef_dataStoreReference",
+        "association": "A_dataStoreRef_dataStoreReference",
+        "id": "A_dataStoreRef_dataStoreReference-dataStoreReference"
+      }
+    },
+    {
+      "name": "A_itemSubjectRef_itemAwareElement",
+      "visibility": "private",
+      "memberEnd": "ItemAwareElement-itemSubjectRef A_itemSubjectRef_itemAwareElement-itemAwareElement",
+      "ownedEnd": {
+        "name": "itemAwareElement",
+        "type": "ItemAwareElement",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_itemSubjectRef_itemAwareElement",
+        "association": "A_itemSubjectRef_itemAwareElement",
+        "id": "A_itemSubjectRef_itemAwareElement-itemAwareElement"
+      }
+    },
+    {
+      "name": "A_from_assignment",
+      "visibility": "private",
+      "memberEnd": "Assignment-from A_from_assignment-assignment",
+      "ownedEnd": {
+        "name": "assignment",
+        "visibility": "public",
+        "type": "Assignment",
+        "lower": "0",
+        "owningAssociation": "A_from_assignment",
+        "association": "A_from_assignment",
+        "id": "A_from_assignment-assignment"
+      }
+    },
+    {
+      "name": "A_to_assignment",
+      "visibility": "private",
+      "memberEnd": "Assignment-to A_to_assignment-assignment",
+      "ownedEnd": {
+        "name": "assignment",
+        "visibility": "public",
+        "type": "Assignment",
+        "lower": "0",
+        "owningAssociation": "A_to_assignment",
+        "association": "A_to_assignment",
+        "id": "A_to_assignment-assignment"
+      }
+    },
+    {
+      "name": "A_dataObjectRef_dataObject",
+      "visibility": "private",
+      "memberEnd": "DataObjectReference-dataObjectRef A_dataObjectRef_dataObject-dataObject",
+      "ownedEnd": {
+        "name": "dataObject",
+        "visibility": "public",
+        "type": "DataObjectReference",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_dataObjectRef_dataObject",
+        "association": "A_dataObjectRef_dataObject",
+        "id": "A_dataObjectRef_dataObject-dataObject"
+      }
+    },
+    {
+      "name": "A_calledCollaborationRef_callConversation",
+      "visibility": "private",
+      "memberEnd": "CallConversation-calledCollaborationRef A_calledCollaborationRef_callConversation-callConversation",
+      "ownedEnd": {
+        "name": "callConversation",
+        "type": "CallConversation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_calledCollaborationRef_callConversation",
+        "association": "A_calledCollaborationRef_callConversation",
+        "id": "A_calledCollaborationRef_callConversation-callConversation"
+      }
+    },
+    {
+      "name": "A_participantRefs_conversationNode",
+      "visibility": "private",
+      "memberEnd": "ConversationNode-participantRefs A_participantRefs_conversationNode-conversationNode",
+      "ownedEnd": {
+        "name": "conversationNode",
+        "type": "ConversationNode",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_participantRefs_conversationNode",
+        "association": "A_participantRefs_conversationNode",
+        "id": "A_participantRefs_conversationNode-conversationNode"
+      }
+    },
+    {
+      "name": "A_messageFlowRefs_communication",
+      "visibility": "private",
+      "memberEnd": "ConversationNode-messageFlowRefs A_messageFlowRefs_communication-communication",
+      "ownedEnd": {
+        "name": "communication",
+        "type": "ConversationNode",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageFlowRefs_communication",
+        "association": "A_messageFlowRefs_communication",
+        "id": "A_messageFlowRefs_communication-communication"
+      }
+    },
+    {
+      "name": "A_participantAssociations_callConversation",
+      "visibility": "private",
+      "memberEnd": "CallConversation-participantAssociations A_participantAssociations_callConversation-callConversation",
+      "ownedEnd": {
+        "name": "callConversation",
+        "type": "CallConversation",
+        "lower": "0",
+        "owningAssociation": "A_participantAssociations_callConversation",
+        "association": "A_participantAssociations_callConversation",
+        "id": "A_participantAssociations_callConversation-callConversation"
+      }
+    },
+    {
+      "name": "A_correlationKeys_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-correlationKeys A_correlationKeys_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "visibility": "public",
+        "type": "Collaboration",
+        "lower": "0",
+        "owningAssociation": "A_correlationKeys_collaboration",
+        "association": "A_correlationKeys_collaboration",
+        "id": "A_correlationKeys_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_correlationKeys_conversationNode",
+      "visibility": "private",
+      "memberEnd": "ConversationNode-correlationKeys A_correlationKeys_conversationNode-conversationNode",
+      "ownedEnd": {
+        "name": "conversationNode",
+        "visibility": "public",
+        "type": "ConversationNode",
+        "lower": "0",
+        "owningAssociation": "A_correlationKeys_conversationNode",
+        "association": "A_correlationKeys_conversationNode",
+        "id": "A_correlationKeys_conversationNode-conversationNode"
+      }
+    },
+    {
+      "name": "A_innerConversationNodeRef_conversationAssociation",
+      "visibility": "private",
+      "memberEnd": "ConversationAssociation-innerConversationNodeRef A_innerConversationNodeRef_conversationAssociation-conversationAssociation",
+      "ownedEnd": {
+        "name": "conversationAssociation",
+        "visibility": "public",
+        "type": "ConversationAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_innerConversationNodeRef_conversationAssociation",
+        "association": "A_innerConversationNodeRef_conversationAssociation",
+        "id": "A_innerConversationNodeRef_conversationAssociation-conversationAssociation"
+      }
+    },
+    {
+      "name": "A_outerConversationNodeRef_conversationAssociation",
+      "visibility": "private",
+      "memberEnd": "ConversationAssociation-outerConversationNodeRef A_outerConversationNodeRef_conversationAssociation-conversationAssociation",
+      "ownedEnd": {
+        "name": "conversationAssociation",
+        "visibility": "public",
+        "type": "ConversationAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_outerConversationNodeRef_conversationAssociation",
+        "association": "A_outerConversationNodeRef_conversationAssociation",
+        "id": "A_outerConversationNodeRef_conversationAssociation-conversationAssociation"
+      }
+    },
+    {
+      "name": "A_conversationNodes_subConversation",
+      "visibility": "private",
+      "memberEnd": "SubConversation-conversationNodes A_conversationNodes_subConversation-subConversation",
+      "ownedEnd": {
+        "name": "subConversation",
+        "visibility": "public",
+        "type": "SubConversation",
+        "lower": "0",
+        "owningAssociation": "A_conversationNodes_subConversation",
+        "association": "A_conversationNodes_subConversation",
+        "id": "A_conversationNodes_subConversation-subConversation"
+      }
+    },
+    {
+      "name": "A_sourceRef_outgoingConversationLinks",
+      "visibility": "private",
+      "memberEnd": "ConversationLink-sourceRef InteractionNode-outgoingConversationLinks"
+    },
+    {
+      "name": "A_targetRef_incomingConversationLinks",
+      "visibility": "private",
+      "memberEnd": "ConversationLink-targetRef InteractionNode-incomingConversationLinks"
+    },
+    {
+      "name": "A_correlationPropertyRef_correlationKey",
+      "visibility": "private",
+      "memberEnd": "CorrelationKey-correlationPropertyRef A_correlationPropertyRef_correlationKey-correlationKey",
+      "ownedEnd": {
+        "name": "correlationKey",
+        "type": "CorrelationKey",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_correlationPropertyRef_correlationKey",
+        "association": "A_correlationPropertyRef_correlationKey",
+        "id": "A_correlationPropertyRef_correlationKey-correlationKey"
+      }
+    },
+    {
+      "name": "A_supportedInterfaceRefs_callableElements",
+      "visibility": "private",
+      "memberEnd": "CallableElement-supportedInterfaceRefs A_supportedInterfaceRefs_callableElements-callableElements",
+      "ownedEnd": {
+        "name": "callableElements",
+        "type": "CallableElement",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_supportedInterfaceRefs_callableElements",
+        "association": "A_supportedInterfaceRefs_callableElements",
+        "id": "A_supportedInterfaceRefs_callableElements-callableElements"
+      }
+    },
+    {
+      "name": "A_ioBinding_callableElement",
+      "visibility": "private",
+      "memberEnd": "CallableElement-ioBinding A_ioBinding_callableElement-callableElement",
+      "ownedEnd": {
+        "name": "callableElement",
+        "type": "CallableElement",
+        "lower": "0",
+        "owningAssociation": "A_ioBinding_callableElement",
+        "association": "A_ioBinding_callableElement",
+        "id": "A_ioBinding_callableElement-callableElement"
+      }
+    },
+    {
+      "name": "A_ioSpecification_callableElement",
+      "visibility": "private",
+      "memberEnd": "CallableElement-ioSpecification A_ioSpecification_callableElement-callableElement",
+      "ownedEnd": {
+        "name": "callableElement",
+        "type": "CallableElement",
+        "lower": "0",
+        "owningAssociation": "A_ioSpecification_callableElement",
+        "association": "A_ioSpecification_callableElement",
+        "id": "A_ioSpecification_callableElement-callableElement"
+      }
+    },
+    {
+      "name": "A_messagePath_correlationset",
+      "visibility": "private",
+      "memberEnd": "CorrelationPropertyRetrievalExpression-messagePath A_messagePath_correlationset-correlationset",
+      "ownedEnd": {
+        "name": "correlationset",
+        "type": "CorrelationPropertyRetrievalExpression",
+        "lower": "0",
+        "owningAssociation": "A_messagePath_correlationset",
+        "association": "A_messagePath_correlationset",
+        "id": "A_messagePath_correlationset-correlationset"
+      }
+    },
+    {
+      "name": "A_structureRef_error",
+      "visibility": "private",
+      "memberEnd": "Error-structureRef A_structureRef_error-error",
+      "ownedEnd": {
+        "name": "error",
+        "type": "Error",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_structureRef_error",
+        "association": "A_structureRef_error",
+        "id": "A_structureRef_error-error"
+      }
+    },
+    {
+      "name": "A_evaluatesToTypeRef_formalExpression",
+      "visibility": "private",
+      "memberEnd": "FormalExpression-evaluatesToTypeRef A_evaluatesToTypeRef_formalExpression-formalExpression",
+      "ownedEnd": {
+        "name": "formalExpression",
+        "type": "FormalExpression",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_evaluatesToTypeRef_formalExpression",
+        "association": "A_evaluatesToTypeRef_formalExpression",
+        "id": "A_evaluatesToTypeRef_formalExpression-formalExpression"
+      }
+    },
+    {
+      "name": "A_conditionExpression_sequenceFlow",
+      "visibility": "private",
+      "memberEnd": "SequenceFlow-conditionExpression A_conditionExpression_sequenceFlow-sequenceFlow",
+      "ownedEnd": {
+        "name": "sequenceFlow",
+        "type": "SequenceFlow",
+        "lower": "0",
+        "owningAssociation": "A_conditionExpression_sequenceFlow",
+        "association": "A_conditionExpression_sequenceFlow",
+        "id": "A_conditionExpression_sequenceFlow-sequenceFlow"
+      }
+    },
+    {
+      "name": "A_flowElements_container",
+      "visibility": "private",
+      "memberEnd": "FlowElementsContainer-flowElements A_flowElements_container-container",
+      "ownedEnd": {
+        "name": "container",
+        "type": "FlowElementsContainer",
+        "owningAssociation": "A_flowElements_container",
+        "association": "A_flowElements_container",
+        "id": "A_flowElements_container-container"
+      }
+    },
+    {
+      "name": "A_sourceRef_outgoing_flow",
+      "visibility": "private",
+      "memberEnd": "SequenceFlow-sourceRef FlowNode-outgoing"
+    },
+    {
+      "name": "A_targetRef_incoming_flow",
+      "visibility": "private",
+      "memberEnd": "SequenceFlow-targetRef FlowNode-incoming"
+    },
+    {
+      "name": "A_correlationPropertyRetrievalExpression_correlationproperty",
+      "visibility": "private",
+      "memberEnd": "CorrelationProperty-correlationPropertyRetrievalExpression A_correlationPropertyRetrievalExpression_correlationproperty-correlationproperty",
+      "ownedEnd": {
+        "name": "correlationproperty",
+        "type": "CorrelationProperty",
+        "owningAssociation": "A_correlationPropertyRetrievalExpression_correlationproperty",
+        "association": "A_correlationPropertyRetrievalExpression_correlationproperty",
+        "id": "A_correlationPropertyRetrievalExpression_correlationproperty-correlationproperty"
+      }
+    },
+    {
+      "name": "A_messageRef_correlationPropertyRetrievalExpression",
+      "visibility": "private",
+      "memberEnd": "CorrelationPropertyRetrievalExpression-messageRef A_messageRef_correlationPropertyRetrievalExpression-correlationPropertyRetrievalExpression",
+      "ownedEnd": {
+        "name": "correlationPropertyRetrievalExpression",
+        "type": "CorrelationPropertyRetrievalExpression",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageRef_correlationPropertyRetrievalExpression",
+        "association": "A_messageRef_correlationPropertyRetrievalExpression",
+        "id": "A_messageRef_correlationPropertyRetrievalExpression-correlationPropertyRetrievalExpression"
+      }
+    },
+    {
+      "name": "A_dataPath_correlationPropertyBinding",
+      "visibility": "private",
+      "memberEnd": "CorrelationPropertyBinding-dataPath A_dataPath_correlationPropertyBinding-correlationPropertyBinding",
+      "ownedEnd": {
+        "name": "correlationPropertyBinding",
+        "type": "CorrelationPropertyBinding",
+        "lower": "0",
+        "owningAssociation": "A_dataPath_correlationPropertyBinding",
+        "association": "A_dataPath_correlationPropertyBinding",
+        "id": "A_dataPath_correlationPropertyBinding-correlationPropertyBinding"
+      }
+    },
+    {
+      "name": "A_correlationPropertyRef_correlationPropertyBinding",
+      "visibility": "private",
+      "memberEnd": "CorrelationPropertyBinding-correlationPropertyRef A_correlationPropertyRef_correlationPropertyBinding-correlationPropertyBinding",
+      "ownedEnd": {
+        "name": "correlationPropertyBinding",
+        "type": "CorrelationPropertyBinding",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_correlationPropertyRef_correlationPropertyBinding",
+        "association": "A_correlationPropertyRef_correlationPropertyBinding",
+        "id": "A_correlationPropertyRef_correlationPropertyBinding-correlationPropertyBinding"
+      }
+    },
+    {
+      "name": "A_resourceParameters_resource",
+      "visibility": "private",
+      "memberEnd": "Resource-resourceParameters A_resourceParameters_resource-resource",
+      "ownedEnd": {
+        "name": "resource",
+        "type": "Resource",
+        "owningAssociation": "A_resourceParameters_resource",
+        "association": "A_resourceParameters_resource",
+        "id": "A_resourceParameters_resource-resource"
+      }
+    },
+    {
+      "name": "A_import_itemDefinition",
+      "visibility": "private",
+      "memberEnd": "ItemDefinition-import A_import_itemDefinition-itemDefinition",
+      "ownedEnd": {
+        "name": "itemDefinition",
+        "type": "ItemDefinition",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_import_itemDefinition",
+        "association": "A_import_itemDefinition",
+        "id": "A_import_itemDefinition-itemDefinition"
+      }
+    },
+    {
+      "name": "A_correlationKeyRef_correlationSubscription",
+      "visibility": "private",
+      "memberEnd": "CorrelationSubscription-correlationKeyRef A_correlationKeyRef_correlationSubscription-correlationSubscription",
+      "ownedEnd": {
+        "name": "correlationSubscription",
+        "type": "CorrelationSubscription",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_correlationKeyRef_correlationSubscription",
+        "association": "A_correlationKeyRef_correlationSubscription",
+        "id": "A_correlationKeyRef_correlationSubscription-correlationSubscription"
+      }
+    },
+    {
+      "name": "A_correlationPropertyBinding_correlationSubscription",
+      "visibility": "private",
+      "memberEnd": "CorrelationSubscription-correlationPropertyBinding A_correlationPropertyBinding_correlationSubscription-correlationSubscription",
+      "ownedEnd": {
+        "name": "correlationSubscription",
+        "type": "CorrelationSubscription",
+        "lower": "0",
+        "owningAssociation": "A_correlationPropertyBinding_correlationSubscription",
+        "association": "A_correlationPropertyBinding_correlationSubscription",
+        "id": "A_correlationPropertyBinding_correlationSubscription-correlationSubscription"
+      }
+    },
+    {
+      "name": "A_auditing_flowElement",
+      "visibility": "private",
+      "memberEnd": "FlowElement-auditing A_auditing_flowElement-flowElement",
+      "ownedEnd": {
+        "name": "flowElement",
+        "type": "FlowElement",
+        "lower": "0",
+        "owningAssociation": "A_auditing_flowElement",
+        "association": "A_auditing_flowElement",
+        "id": "A_auditing_flowElement-flowElement"
+      }
+    },
+    {
+      "name": "A_monitoring_flowElement",
+      "visibility": "private",
+      "memberEnd": "FlowElement-monitoring A_monitoring_flowElement-flowElement",
+      "ownedEnd": {
+        "name": "flowElement",
+        "type": "FlowElement",
+        "lower": "0",
+        "owningAssociation": "A_monitoring_flowElement",
+        "association": "A_monitoring_flowElement",
+        "id": "A_monitoring_flowElement-flowElement"
+      }
+    },
+    {
+      "name": "A_type_correlationProperty",
+      "visibility": "private",
+      "memberEnd": "CorrelationProperty-type A_type_correlationProperty-correlationProperty",
+      "ownedEnd": {
+        "name": "correlationProperty",
+        "visibility": "public",
+        "type": "CorrelationProperty",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_type_correlationProperty",
+        "association": "A_type_correlationProperty",
+        "id": "A_type_correlationProperty-correlationProperty"
+      }
+    },
+    {
+      "name": "A_type_resourceParameter",
+      "visibility": "private",
+      "memberEnd": "ResourceParameter-type A_type_resourceParameter-resourceParameter",
+      "ownedEnd": {
+        "name": "resourceParameter",
+        "visibility": "public",
+        "type": "ResourceParameter",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_type_resourceParameter",
+        "association": "A_type_resourceParameter",
+        "id": "A_type_resourceParameter-resourceParameter"
+      }
+    },
+    {
+      "name": "A_itemRef_message",
+      "visibility": "private",
+      "memberEnd": "Message-itemRef A_itemRef_message-message",
+      "ownedEnd": {
+        "name": "message",
+        "visibility": "public",
+        "type": "Message",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_itemRef_message",
+        "association": "A_itemRef_message",
+        "id": "A_itemRef_message-message"
+      }
+    },
+    {
+      "name": "A_laneSets_flowElementsContainer",
+      "visibility": "private",
+      "memberEnd": "FlowElementsContainer-laneSets A_laneSets_flowElementsContainer-flowElementsContainer",
+      "ownedEnd": {
+        "name": "flowElementsContainer",
+        "visibility": "public",
+        "type": "FlowElementsContainer",
+        "lower": "0",
+        "owningAssociation": "A_laneSets_flowElementsContainer",
+        "association": "A_laneSets_flowElementsContainer",
+        "id": "A_laneSets_flowElementsContainer-flowElementsContainer"
+      }
+    },
+    {
+      "name": "A_messageFlowAssociations_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-messageFlowAssociations A_messageFlowAssociations_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "type": "Collaboration",
+        "owningAssociation": "A_messageFlowAssociations_collaboration",
+        "association": "A_messageFlowAssociations_collaboration",
+        "id": "A_messageFlowAssociations_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_participantAssociations_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-participantAssociations A_participantAssociations_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "type": "Collaboration",
+        "lower": "0",
+        "owningAssociation": "A_participantAssociations_collaboration",
+        "association": "A_participantAssociations_collaboration",
+        "id": "A_participantAssociations_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_artifacts_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-artifacts A_artifacts_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "type": "Collaboration",
+        "lower": "0",
+        "owningAssociation": "A_artifacts_collaboration",
+        "association": "A_artifacts_collaboration",
+        "id": "A_artifacts_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_conversationAssociations_converstaionAssociations",
+      "visibility": "private",
+      "memberEnd": "Collaboration-conversationAssociations A_conversationAssociations_converstaionAssociations-converstaionAssociations",
+      "ownedEnd": {
+        "name": "converstaionAssociations",
+        "type": "Collaboration",
+        "owningAssociation": "A_conversationAssociations_converstaionAssociations",
+        "association": "A_conversationAssociations_converstaionAssociations",
+        "id": "A_conversationAssociations_converstaionAssociations-converstaionAssociations"
+      }
+    },
+    {
+      "name": "A_choreographyRef_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-choreographyRef A_choreographyRef_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "type": "Collaboration",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_choreographyRef_collaboration",
+        "association": "A_choreographyRef_collaboration",
+        "id": "A_choreographyRef_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_innerParticipantRef_participantAssociation",
+      "visibility": "private",
+      "memberEnd": "ParticipantAssociation-innerParticipantRef A_innerParticipantRef_participantAssociation-participantAssociation",
+      "ownedEnd": {
+        "name": "participantAssociation",
+        "type": "ParticipantAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_innerParticipantRef_participantAssociation",
+        "association": "A_innerParticipantRef_participantAssociation",
+        "id": "A_innerParticipantRef_participantAssociation-participantAssociation"
+      }
+    },
+    {
+      "name": "A_outerParticipantRef_participantAssociation",
+      "visibility": "private",
+      "memberEnd": "ParticipantAssociation-outerParticipantRef A_outerParticipantRef_participantAssociation-participantAssociation",
+      "ownedEnd": {
+        "name": "participantAssociation",
+        "type": "ParticipantAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_outerParticipantRef_participantAssociation",
+        "association": "A_outerParticipantRef_participantAssociation",
+        "id": "A_outerParticipantRef_participantAssociation-participantAssociation"
+      }
+    },
+    {
+      "name": "A_endPointRefs_participant",
+      "visibility": "private",
+      "memberEnd": "Participant-endPointRefs A_endPointRefs_participant-participant",
+      "ownedEnd": {
+        "name": "participant",
+        "type": "Participant",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_endPointRefs_participant",
+        "association": "A_endPointRefs_participant",
+        "id": "A_endPointRefs_participant-participant"
+      }
+    },
+    {
+      "name": "A_participantMultiplicity_participant",
+      "visibility": "private",
+      "memberEnd": "Participant-participantMultiplicity A_participantMultiplicity_participant-participant",
+      "ownedEnd": {
+        "name": "participant",
+        "type": "Participant",
+        "owningAssociation": "A_participantMultiplicity_participant",
+        "association": "A_participantMultiplicity_participant",
+        "id": "A_participantMultiplicity_participant-participant"
+      }
+    },
+    {
+      "name": "A_interfaceRefs_participant",
+      "visibility": "private",
+      "memberEnd": "Participant-interfaceRefs A_interfaceRefs_participant-participant",
+      "ownedEnd": {
+        "name": "participant",
+        "type": "Participant",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_interfaceRefs_participant",
+        "association": "A_interfaceRefs_participant",
+        "id": "A_interfaceRefs_participant-participant"
+      }
+    },
+    {
+      "name": "A_partnerEntityRef_participantRef",
+      "visibility": "private",
+      "memberEnd": "A_partnerEntityRef_participantRef-partnerEntityRef PartnerEntity-participantRef",
+      "ownedEnd": {
+        "name": "partnerEntityRef",
+        "type": "PartnerEntity",
+        "upper": "*",
+        "lower": "0",
+        "isDerived": true,
+        "owningAssociation": "A_partnerEntityRef_participantRef",
+        "association": "A_partnerEntityRef_participantRef",
+        "id": "A_partnerEntityRef_participantRef-partnerEntityRef"
+      }
+    },
+    {
+      "name": "A_partnerRoleRef_participantRef",
+      "visibility": "private",
+      "memberEnd": "A_partnerRoleRef_participantRef-partnerRoleRef PartnerRole-participantRef",
+      "ownedEnd": {
+        "name": "partnerRoleRef",
+        "type": "PartnerRole",
+        "upper": "*",
+        "lower": "0",
+        "isDerived": true,
+        "owningAssociation": "A_partnerRoleRef_participantRef",
+        "association": "A_partnerRoleRef_participantRef",
+        "id": "A_partnerRoleRef_participantRef-partnerRoleRef"
+      }
+    },
+    {
+      "name": "A_processRef_participant",
+      "visibility": "private",
+      "memberEnd": "Participant-processRef A_processRef_participant-participant",
+      "ownedEnd": {
+        "name": "participant",
+        "type": "Participant",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_processRef_participant",
+        "association": "A_processRef_participant",
+        "id": "A_processRef_participant-participant"
+      }
+    },
+    {
+      "name": "A_innerMessageFlowRef_messageFlowAssociation",
+      "visibility": "private",
+      "memberEnd": "MessageFlowAssociation-innerMessageFlowRef A_innerMessageFlowRef_messageFlowAssociation-messageFlowAssociation",
+      "ownedEnd": {
+        "name": "messageFlowAssociation",
+        "type": "MessageFlowAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_innerMessageFlowRef_messageFlowAssociation",
+        "association": "A_innerMessageFlowRef_messageFlowAssociation",
+        "id": "A_innerMessageFlowRef_messageFlowAssociation-messageFlowAssociation"
+      }
+    },
+    {
+      "name": "A_outerMessageFlowRef_messageFlowAssociation",
+      "visibility": "private",
+      "memberEnd": "MessageFlowAssociation-outerMessageFlowRef A_outerMessageFlowRef_messageFlowAssociation-messageFlowAssociation",
+      "ownedEnd": {
+        "name": "messageFlowAssociation",
+        "type": "MessageFlowAssociation",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_outerMessageFlowRef_messageFlowAssociation",
+        "association": "A_outerMessageFlowRef_messageFlowAssociation",
+        "id": "A_outerMessageFlowRef_messageFlowAssociation-messageFlowAssociation"
+      }
+    },
+    {
+      "name": "A_targetRef_messageFlow",
+      "visibility": "private",
+      "memberEnd": "MessageFlow-targetRef A_targetRef_messageFlow-messageFlow",
+      "ownedEnd": {
+        "name": "messageFlow",
+        "type": "MessageFlow",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_targetRef_messageFlow",
+        "association": "A_targetRef_messageFlow",
+        "id": "A_targetRef_messageFlow-messageFlow"
+      }
+    },
+    {
+      "name": "A_messageRef_messageFlow",
+      "visibility": "private",
+      "memberEnd": "MessageFlow-messageRef A_messageRef_messageFlow-messageFlow",
+      "ownedEnd": {
+        "name": "messageFlow",
+        "type": "MessageFlow",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageRef_messageFlow",
+        "association": "A_messageRef_messageFlow",
+        "id": "A_messageRef_messageFlow-messageFlow"
+      }
+    },
+    {
+      "name": "A_sourceRef_messageFlow",
+      "visibility": "private",
+      "memberEnd": "MessageFlow-sourceRef A_sourceRef_messageFlow-messageFlow",
+      "ownedEnd": {
+        "name": "messageFlow",
+        "type": "MessageFlow",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_sourceRef_messageFlow",
+        "association": "A_sourceRef_messageFlow",
+        "id": "A_sourceRef_messageFlow-messageFlow"
+      }
+    },
+    {
+      "name": "A_participants_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-participants A_participants_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "visibility": "public",
+        "type": "Collaboration",
+        "owningAssociation": "A_participants_collaboration",
+        "association": "A_participants_collaboration",
+        "id": "A_participants_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_messageFlows_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-messageFlows A_messageFlows_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "visibility": "public",
+        "type": "Collaboration",
+        "owningAssociation": "A_messageFlows_collaboration",
+        "association": "A_messageFlows_collaboration",
+        "id": "A_messageFlows_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_conversations_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-conversations A_conversations_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "visibility": "public",
+        "type": "Collaboration",
+        "lower": "0",
+        "owningAssociation": "A_conversations_collaboration",
+        "association": "A_conversations_collaboration",
+        "id": "A_conversations_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_conversationLinks_collaboration",
+      "visibility": "private",
+      "memberEnd": "Collaboration-conversationLinks A_conversationLinks_collaboration-collaboration",
+      "ownedEnd": {
+        "name": "collaboration",
+        "visibility": "public",
+        "type": "Collaboration",
+        "owningAssociation": "A_conversationLinks_collaboration",
+        "association": "A_conversationLinks_collaboration",
+        "id": "A_conversationLinks_collaboration-collaboration"
+      }
+    },
+    {
+      "name": "A_participantAssociations_callChoreographyActivity",
+      "visibility": "private",
+      "memberEnd": "CallChoreography-participantAssociations A_participantAssociations_callChoreographyActivity-callChoreographyActivity",
+      "ownedEnd": {
+        "name": "callChoreographyActivity",
+        "type": "CallChoreography",
+        "lower": "0",
+        "owningAssociation": "A_participantAssociations_callChoreographyActivity",
+        "association": "A_participantAssociations_callChoreographyActivity",
+        "id": "A_participantAssociations_callChoreographyActivity-callChoreographyActivity"
+      }
+    },
+    {
+      "name": "A_calledChoreographyRef_callChoreographyActivity",
+      "visibility": "private",
+      "memberEnd": "CallChoreography-calledChoreographyRef A_calledChoreographyRef_callChoreographyActivity-callChoreographyActivity",
+      "ownedEnd": {
+        "name": "callChoreographyActivity",
+        "type": "CallChoreography",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_calledChoreographyRef_callChoreographyActivity",
+        "association": "A_calledChoreographyRef_callChoreographyActivity",
+        "id": "A_calledChoreographyRef_callChoreographyActivity-callChoreographyActivity"
+      }
+    },
+    {
+      "name": "A_messageFlowRef_choreographyTask",
+      "visibility": "private",
+      "memberEnd": "ChoreographyTask-messageFlowRef A_messageFlowRef_choreographyTask-choreographyTask",
+      "ownedEnd": {
+        "name": "choreographyTask",
+        "visibility": "public",
+        "type": "ChoreographyTask",
+        "lower": "0",
+        "owningAssociation": "A_messageFlowRef_choreographyTask",
+        "association": "A_messageFlowRef_choreographyTask",
+        "id": "A_messageFlowRef_choreographyTask-choreographyTask"
+      }
+    },
+    {
+      "name": "A_initiatingParticipantRef_choreographyActivity",
+      "visibility": "private",
+      "memberEnd": "ChoreographyActivity-initiatingParticipantRef A_initiatingParticipantRef_choreographyActivity-choreographyActivity",
+      "ownedEnd": {
+        "name": "choreographyActivity",
+        "type": "ChoreographyActivity",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_initiatingParticipantRef_choreographyActivity",
+        "association": "A_initiatingParticipantRef_choreographyActivity",
+        "id": "A_initiatingParticipantRef_choreographyActivity-choreographyActivity"
+      }
+    },
+    {
+      "name": "A_participantRefs_choreographyActivity",
+      "visibility": "private",
+      "memberEnd": "ChoreographyActivity-participantRefs A_participantRefs_choreographyActivity-choreographyActivity",
+      "ownedEnd": {
+        "name": "choreographyActivity",
+        "type": "ChoreographyActivity",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_participantRefs_choreographyActivity",
+        "association": "A_participantRefs_choreographyActivity",
+        "id": "A_participantRefs_choreographyActivity-choreographyActivity"
+      }
+    },
+    {
+      "name": "A_artifacts_subChoreography",
+      "visibility": "private",
+      "memberEnd": "SubChoreography-artifacts A_artifacts_subChoreography-subChoreography",
+      "ownedEnd": {
+        "name": "subChoreography",
+        "visibility": "public",
+        "type": "SubChoreography",
+        "lower": "0",
+        "owningAssociation": "A_artifacts_subChoreography",
+        "association": "A_artifacts_subChoreography",
+        "id": "A_artifacts_subChoreography-subChoreography"
+      }
+    },
+    {
+      "name": "A_correlationKeys_choreographyActivity",
+      "visibility": "private",
+      "memberEnd": "ChoreographyActivity-correlationKeys A_correlationKeys_choreographyActivity-choreographyActivity",
+      "ownedEnd": {
+        "name": "choreographyActivity",
+        "visibility": "public",
+        "type": "ChoreographyActivity",
+        "lower": "0",
+        "owningAssociation": "A_correlationKeys_choreographyActivity",
+        "association": "A_correlationKeys_choreographyActivity",
+        "id": "A_correlationKeys_choreographyActivity-choreographyActivity"
+      }
+    },
+    {
+      "name": "A_initiatingParticipantRef_globalChoreographyTask",
+      "visibility": "private",
+      "memberEnd": "GlobalChoreographyTask-initiatingParticipantRef A_initiatingParticipantRef_globalChoreographyTask-globalChoreographyTask",
+      "ownedEnd": {
+        "name": "globalChoreographyTask",
+        "type": "GlobalChoreographyTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_initiatingParticipantRef_globalChoreographyTask",
+        "association": "A_initiatingParticipantRef_globalChoreographyTask",
+        "id": "A_initiatingParticipantRef_globalChoreographyTask-globalChoreographyTask"
+      }
+    },
+    {
+      "name": "A_sourceRef_outgoing_association",
+      "visibility": "private",
+      "memberEnd": "Association-sourceRef A_sourceRef_outgoing_association-outgoing",
+      "ownedEnd": {
+        "name": "outgoing",
+        "type": "Association",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_sourceRef_outgoing_association",
+        "association": "A_sourceRef_outgoing_association",
+        "id": "A_sourceRef_outgoing_association-outgoing"
+      }
+    },
+    {
+      "name": "A_targetRef_incoming_association",
+      "visibility": "private",
+      "memberEnd": "Association-targetRef A_targetRef_incoming_association-incoming",
+      "ownedEnd": {
+        "name": "incoming",
+        "type": "Association",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_targetRef_incoming_association",
+        "association": "A_targetRef_incoming_association",
+        "id": "A_targetRef_incoming_association-incoming"
+      }
+    },
+    {
+      "name": "A_categoryValueRef_categoryValueRef",
+      "visibility": "private",
+      "memberEnd": "Group-categoryValueRef A_categoryValueRef_categoryValueRef-categoryValueRef",
+      "ownedEnd": {
+        "name": "categoryValueRef",
+        "type": "Group",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_categoryValueRef_categoryValueRef",
+        "association": "A_categoryValueRef_categoryValueRef",
+        "id": "A_categoryValueRef_categoryValueRef-categoryValueRef"
+      }
+    },
+    {
+      "name": "A_categoryValue_category",
+      "visibility": "private",
+      "memberEnd": "Category-categoryValue A_categoryValue_category-category",
+      "ownedEnd": {
+        "name": "category",
+        "type": "Category",
+        "owningAssociation": "A_categoryValue_category",
+        "association": "A_categoryValue_category",
+        "id": "A_categoryValue_category-category"
+      }
+    },
+    {
+      "name": "A_categorizedFlowElements_categoryValueRef",
+      "visibility": "private",
+      "memberEnd": "CategoryValue-categorizedFlowElements FlowElement-categoryValueRef"
+    },
+    {
+      "name": "A_event_complexBehaviorDefinition",
+      "visibility": "private",
+      "memberEnd": "ComplexBehaviorDefinition-event A_event_complexBehaviorDefinition-complexBehaviorDefinition",
+      "ownedEnd": {
+        "name": "complexBehaviorDefinition",
+        "type": "ComplexBehaviorDefinition",
+        "owningAssociation": "A_event_complexBehaviorDefinition",
+        "association": "A_event_complexBehaviorDefinition",
+        "id": "A_event_complexBehaviorDefinition-complexBehaviorDefinition"
+      }
+    },
+    {
+      "name": "A_expression_resourceAssignmentExpression",
+      "visibility": "private",
+      "memberEnd": "ResourceAssignmentExpression-expression A_expression_resourceAssignmentExpression-resourceAssignmentExpression",
+      "ownedEnd": {
+        "name": "resourceAssignmentExpression",
+        "type": "ResourceAssignmentExpression",
+        "lower": "0",
+        "owningAssociation": "A_expression_resourceAssignmentExpression",
+        "association": "A_expression_resourceAssignmentExpression",
+        "id": "A_expression_resourceAssignmentExpression-resourceAssignmentExpression"
+      }
+    },
+    {
+      "name": "A_expression_resourceParameterBinding",
+      "visibility": "private",
+      "memberEnd": "ResourceParameterBinding-expression A_expression_resourceParameterBinding-resourceParameterBinding",
+      "ownedEnd": {
+        "name": "resourceParameterBinding",
+        "type": "ResourceParameterBinding",
+        "lower": "0",
+        "owningAssociation": "A_expression_resourceParameterBinding",
+        "association": "A_expression_resourceParameterBinding",
+        "id": "A_expression_resourceParameterBinding-resourceParameterBinding"
+      }
+    },
+    {
+      "name": "A_noneBehaviorEventRef_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-noneBehaviorEventRef A_noneBehaviorEventRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_noneBehaviorEventRef_multiInstanceLoopCharacteristics",
+        "association": "A_noneBehaviorEventRef_multiInstanceLoopCharacteristics",
+        "id": "A_noneBehaviorEventRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_oneBehaviorEventRef_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-oneBehaviorEventRef A_oneBehaviorEventRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_oneBehaviorEventRef_multiInstanceLoopCharacteristics",
+        "association": "A_oneBehaviorEventRef_multiInstanceLoopCharacteristics",
+        "id": "A_oneBehaviorEventRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_completionCondition_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-completionCondition A_completionCondition_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_completionCondition_multiInstanceLoopCharacteristics",
+        "association": "A_completionCondition_multiInstanceLoopCharacteristics",
+        "id": "A_completionCondition_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_condition_complexBehaviorDefinition",
+      "visibility": "private",
+      "memberEnd": "ComplexBehaviorDefinition-condition A_condition_complexBehaviorDefinition-complexBehaviorDefinition",
+      "ownedEnd": {
+        "name": "complexBehaviorDefinition",
+        "type": "ComplexBehaviorDefinition",
+        "lower": "0",
+        "owningAssociation": "A_condition_complexBehaviorDefinition",
+        "association": "A_condition_complexBehaviorDefinition",
+        "id": "A_condition_complexBehaviorDefinition-complexBehaviorDefinition"
+      }
+    },
+    {
+      "name": "A_resourceRef_activityResource",
+      "visibility": "private",
+      "memberEnd": "ResourceRole-resourceRef A_resourceRef_activityResource-activityResource",
+      "ownedEnd": {
+        "name": "activityResource",
+        "type": "ResourceRole",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_resourceRef_activityResource",
+        "association": "A_resourceRef_activityResource",
+        "id": "A_resourceRef_activityResource-activityResource"
+      }
+    },
+    {
+      "name": "A_messageRef_sendTask",
+      "visibility": "private",
+      "memberEnd": "SendTask-messageRef A_messageRef_sendTask-sendTask",
+      "ownedEnd": {
+        "name": "sendTask",
+        "type": "SendTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageRef_sendTask",
+        "association": "A_messageRef_sendTask",
+        "id": "A_messageRef_sendTask-sendTask"
+      }
+    },
+    {
+      "name": "A_messageRef_receiveTask",
+      "visibility": "private",
+      "memberEnd": "ReceiveTask-messageRef A_messageRef_receiveTask-receiveTask",
+      "ownedEnd": {
+        "name": "receiveTask",
+        "type": "ReceiveTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_messageRef_receiveTask",
+        "association": "A_messageRef_receiveTask",
+        "id": "A_messageRef_receiveTask-receiveTask"
+      }
+    },
+    {
+      "name": "A_operationRef_serviceTask",
+      "visibility": "private",
+      "memberEnd": "ServiceTask-operationRef A_operationRef_serviceTask-serviceTask",
+      "ownedEnd": {
+        "name": "serviceTask",
+        "type": "ServiceTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_operationRef_serviceTask",
+        "association": "A_operationRef_serviceTask",
+        "id": "A_operationRef_serviceTask-serviceTask"
+      }
+    },
+    {
+      "name": "A_calledElementRef_callActivity",
+      "visibility": "private",
+      "memberEnd": "CallActivity-calledElementRef A_calledElementRef_callActivity-callActivity",
+      "ownedEnd": {
+        "name": "callActivity",
+        "type": "CallActivity",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_calledElementRef_callActivity",
+        "association": "A_calledElementRef_callActivity",
+        "id": "A_calledElementRef_callActivity-callActivity"
+      }
+    },
+    {
+      "name": "A_loopCardinality_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-loopCardinality A_loopCardinality_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_loopCardinality_multiInstanceLoopCharacteristics",
+        "association": "A_loopCardinality_multiInstanceLoopCharacteristics",
+        "id": "A_loopCardinality_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_properties_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-properties A_properties_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_properties_activity",
+        "association": "A_properties_activity",
+        "id": "A_properties_activity-activity"
+      }
+    },
+    {
+      "name": "A_resources_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-resources A_resources_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_resources_activity",
+        "association": "A_resources_activity",
+        "id": "A_resources_activity-activity"
+      }
+    },
+    {
+      "name": "A_loopCondition_standardLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "StandardLoopCharacteristics-loopCondition A_loopCondition_standardLoopCharacteristics-standardLoopCharacteristics",
+      "ownedEnd": {
+        "name": "standardLoopCharacteristics",
+        "type": "StandardLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_loopCondition_standardLoopCharacteristics",
+        "association": "A_loopCondition_standardLoopCharacteristics",
+        "id": "A_loopCondition_standardLoopCharacteristics-standardLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_loopCharacteristics_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-loopCharacteristics A_loopCharacteristics_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_loopCharacteristics_activity",
+        "association": "A_loopCharacteristics_activity",
+        "id": "A_loopCharacteristics_activity-activity"
+      }
+    },
+    {
+      "name": "A_ioSpecification_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-ioSpecification A_ioSpecification_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_ioSpecification_activity",
+        "association": "A_ioSpecification_activity",
+        "id": "A_ioSpecification_activity-activity"
+      }
+    },
+    {
+      "name": "A_completionCondition_adHocSubProcess",
+      "visibility": "private",
+      "memberEnd": "AdHocSubProcess-completionCondition A_completionCondition_adHocSubProcess-adHocSubProcess",
+      "ownedEnd": {
+        "name": "adHocSubProcess",
+        "type": "AdHocSubProcess",
+        "lower": "0",
+        "owningAssociation": "A_completionCondition_adHocSubProcess",
+        "association": "A_completionCondition_adHocSubProcess",
+        "id": "A_completionCondition_adHocSubProcess-adHocSubProcess"
+      }
+    },
+    {
+      "name": "A_operationRef_receiveTask",
+      "visibility": "private",
+      "memberEnd": "ReceiveTask-operationRef A_operationRef_receiveTask-receiveTask",
+      "ownedEnd": {
+        "name": "receiveTask",
+        "type": "ReceiveTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_operationRef_receiveTask",
+        "association": "A_operationRef_receiveTask",
+        "id": "A_operationRef_receiveTask-receiveTask"
+      }
+    },
+    {
+      "name": "A_operationRef_sendTask",
+      "visibility": "private",
+      "memberEnd": "SendTask-operationRef A_operationRef_sendTask-sendTask",
+      "ownedEnd": {
+        "name": "sendTask",
+        "type": "SendTask",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_operationRef_sendTask",
+        "association": "A_operationRef_sendTask",
+        "id": "A_operationRef_sendTask-sendTask"
+      }
+    },
+    {
+      "name": "A_complexBehaviorDefinition_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-complexBehaviorDefinition A_complexBehaviorDefinition_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "owningAssociation": "A_complexBehaviorDefinition_multiInstanceLoopCharacteristics",
+        "association": "A_complexBehaviorDefinition_multiInstanceLoopCharacteristics",
+        "id": "A_complexBehaviorDefinition_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_resourceParameterBindings_activityResource",
+      "visibility": "private",
+      "memberEnd": "ResourceRole-resourceParameterBindings A_resourceParameterBindings_activityResource-activityResource",
+      "ownedEnd": {
+        "name": "activityResource",
+        "type": "ResourceRole",
+        "owningAssociation": "A_resourceParameterBindings_activityResource",
+        "association": "A_resourceParameterBindings_activityResource",
+        "id": "A_resourceParameterBindings_activityResource-activityResource"
+      }
+    },
+    {
+      "name": "A_resourceAssignmentExpression_activityResource",
+      "visibility": "private",
+      "memberEnd": "ResourceRole-resourceAssignmentExpression A_resourceAssignmentExpression_activityResource-activityResource",
+      "ownedEnd": {
+        "name": "activityResource",
+        "type": "ResourceRole",
+        "owningAssociation": "A_resourceAssignmentExpression_activityResource",
+        "association": "A_resourceAssignmentExpression_activityResource",
+        "id": "A_resourceAssignmentExpression_activityResource-activityResource"
+      }
+    },
+    {
+      "name": "A_loopMaximum_standardLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "StandardLoopCharacteristics-loopMaximum A_loopMaximum_standardLoopCharacteristics-standardLoopCharacteristics",
+      "ownedEnd": {
+        "name": "standardLoopCharacteristics",
+        "type": "StandardLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_loopMaximum_standardLoopCharacteristics",
+        "association": "A_loopMaximum_standardLoopCharacteristics",
+        "id": "A_loopMaximum_standardLoopCharacteristics-standardLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_dataInputAssociations_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-dataInputAssociations A_dataInputAssociations_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_dataInputAssociations_activity",
+        "association": "A_dataInputAssociations_activity",
+        "id": "A_dataInputAssociations_activity-activity"
+      }
+    },
+    {
+      "name": "A_dataOutputAssociations_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-dataOutputAssociations A_dataOutputAssociations_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "lower": "0",
+        "owningAssociation": "A_dataOutputAssociations_activity",
+        "association": "A_dataOutputAssociations_activity",
+        "id": "A_dataOutputAssociations_activity-activity"
+      }
+    },
+    {
+      "name": "A_parameterRef_resourceParameterBinding",
+      "visibility": "private",
+      "memberEnd": "ResourceParameterBinding-parameterRef A_parameterRef_resourceParameterBinding-resourceParameterBinding",
+      "ownedEnd": {
+        "name": "resourceParameterBinding",
+        "type": "ResourceParameterBinding",
+        "upper": "*",
+        "lower": "0",
+        "owningAssociation": "A_parameterRef_resourceParameterBinding",
+        "association": "A_parameterRef_resourceParameterBinding",
+        "id": "A_parameterRef_resourceParameterBinding-resourceParameterBinding"
+      }
+    },
+    {
+      "name": "A_loopDataInputRef_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-loopDataInputRef A_loopDataInputRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_loopDataInputRef_multiInstanceLoopCharacteristics",
+        "association": "A_loopDataInputRef_multiInstanceLoopCharacteristics",
+        "id": "A_loopDataInputRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_loopDataOutputRef_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-loopDataOutputRef A_loopDataOutputRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_loopDataOutputRef_multiInstanceLoopCharacteristics",
+        "association": "A_loopDataOutputRef_multiInstanceLoopCharacteristics",
+        "id": "A_loopDataOutputRef_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_inputDataItem_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-inputDataItem A_inputDataItem_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_inputDataItem_multiInstanceLoopCharacteristics",
+        "association": "A_inputDataItem_multiInstanceLoopCharacteristics",
+        "id": "A_inputDataItem_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_outputDataItem_multiInstanceLoopCharacteristics",
+      "visibility": "private",
+      "memberEnd": "MultiInstanceLoopCharacteristics-outputDataItem A_outputDataItem_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics",
+      "ownedEnd": {
+        "name": "multiInstanceLoopCharacteristics",
+        "type": "MultiInstanceLoopCharacteristics",
+        "lower": "0",
+        "owningAssociation": "A_outputDataItem_multiInstanceLoopCharacteristics",
+        "association": "A_outputDataItem_multiInstanceLoopCharacteristics",
+        "id": "A_outputDataItem_multiInstanceLoopCharacteristics-multiInstanceLoopCharacteristics"
+      }
+    },
+    {
+      "name": "A_boundaryEventRefs_attachedToRef",
+      "visibility": "private",
+      "memberEnd": "Activity-boundaryEventRefs BoundaryEvent-attachedToRef"
+    },
+    {
+      "name": "A_default_activity",
+      "visibility": "private",
+      "memberEnd": "Activity-default A_default_activity-activity",
+      "ownedEnd": {
+        "name": "activity",
+        "type": "Activity",
+        "owningAssociation": "A_default_activity",
+        "association": "A_default_activity",
+        "id": "A_default_activity-activity"
+      }
+    },
+    {
+      "name": "A_artifacts_subProcess",
+      "visibility": "private",
+      "memberEnd": "SubProcess-artifacts A_artifacts_subProcess-subProcess",
+      "ownedEnd": {
+        "name": "subProcess",
+        "visibility": "public",
+        "type": "SubProcess",
+        "lower": "0",
+        "owningAssociation": "A_artifacts_subProcess",
+        "association": "A_artifacts_subProcess",
+        "id": "A_artifacts_subProcess-subProcess"
+      }
+    },
+    {
+      "name": "A_diagrams_definitions",
+      "visibility": "private",
+      "memberEnd": "Definitions-diagrams A_diagrams_definitions-definitions",
+      "ownedEnd": {
+        "name": "definitions",
+        "visibility": "public",
+        "type": "Definitions",
+        "owningAssociation": "A_diagrams_definitions",
+        "association": "A_diagrams_definitions",
+        "id": "A_diagrams_definitions-definitions"
+      }
+    },
+    {
+      "name": "A_imports_definition",
+      "visibility": "private",
+      "memberEnd": "Definitions-imports A_imports_definition-definition",
+      "ownedEnd": {
+        "name": "definition",
+        "type": "Definitions",
+        "owningAssociation": "A_imports_definition",
+        "association": "A_imports_definition",
+        "id": "A_imports_definition-definition"
+      }
+    },
+    {
+      "name": "A_extensions_definitions",
+      "visibility": "private",
+      "memberEnd": "Definitions-extensions A_extensions_definitions-definitions",
+      "ownedEnd": {
+        "name": "definitions",
+        "type": "Definitions",
+        "owningAssociation": "A_extensions_definitions",
+        "association": "A_extensions_definitions",
+        "id": "A_extensions_definitions-definitions"
+      }
+    },
+    {
+      "name": "A_relationships_definition",
+      "visibility": "private",
+      "memberEnd": "Definitions-relationships A_relationships_definition-definition",
+      "ownedEnd": {
+        "name": "definition",
+        "type": "Definitions",
+        "owningAssociation": "A_relationships_definition",
+        "association": "A_relationships_definition",
+        "id": "A_relationships_definition-definition"
+      }
+    },
+    {
+      "name": "A_rootElements_definition",
+      "visibility": "private",
+      "memberEnd": "Definitions-rootElements A_rootElements_definition-definition",
+      "ownedEnd": {
+        "name": "definition",
+        "type": "Definitions",
+        "lower": "0",
+        "owningAssociation": "A_rootElements_definition",
+        "association": "A_rootElements_definition",
+        "id": "A_rootElements_definition-definition"
+      }
+    }
+  ],
   "types": [
     {
       "name": "Interface",
@@ -21,8 +2477,8 @@
         },
         {
           "name": "implementationRef",
-          "type": "String",
-          "isAttr": true
+          "isAttr": true,
+          "type": "Element"
         }
       ]
     },
@@ -40,23 +2496,25 @@
         {
           "name": "inMessageRef",
           "type": "Message",
+          "isAttr": true,
           "isReference": true
         },
         {
           "name": "outMessageRef",
           "type": "Message",
+          "isAttr": true,
           "isReference": true
         },
         {
-          "name": "errorRef",
+          "name": "errorRefs",
           "type": "Error",
           "isMany": true,
           "isReference": true
         },
         {
           "name": "implementationRef",
-          "type": "String",
-          "isAttr": true
+          "isAttr": true,
+          "type": "Element"
         }
       ]
     },
@@ -128,33 +2586,6 @@
           "isMany": true
         },
         {
-          "name": "laneSets",
-          "type": "LaneSet",
-          "isMany": true,
-          "replaces": "FlowElementsContainer#laneSets"
-        },
-        {
-          "name": "flowElements",
-          "type": "FlowElement",
-          "isMany": true,
-          "replaces": "FlowElementsContainer#flowElements"
-        },
-        {
-          "name": "artifacts",
-          "type": "Artifact",
-          "isMany": true
-        },
-        {
-          "name": "resources",
-          "type": "ResourceRole",
-          "isMany": true
-        },
-        {
-          "name": "correlationSubscriptions",
-          "type": "CorrelationSubscription",
-          "isMany": true
-        },
-        {
           "name": "supports",
           "type": "Process",
           "isMany": true,
@@ -170,6 +2601,21 @@
           "name": "isExecutable",
           "isAttr": true,
           "type": "Boolean"
+        },
+        {
+          "name": "resources",
+          "type": "ResourceRole",
+          "isMany": true
+        },
+        {
+          "name": "artifacts",
+          "type": "Artifact",
+          "isMany": true
+        },
+        {
+          "name": "correlationSubscriptions",
+          "type": "CorrelationSubscription",
+          "isMany": true
         }
       ]
     },
@@ -203,27 +2649,24 @@
           "type": "String"
         },
         {
+          "name": "childLaneSet",
+          "type": "LaneSet"
+        },
+        {
           "name": "partitionElementRef",
           "type": "BaseElement",
           "isAttr": true,
           "isReference": true
         },
         {
-          "name": "partitionElement",
-          "type": "BaseElement"
-        },
-        {
-          "name": "flowNodeRef",
+          "name": "flowNodeRefs",
           "type": "FlowNode",
           "isMany": true,
           "isReference": true
         },
         {
-          "name": "childLaneSet",
-          "type": "LaneSet",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "name": "partitionElement",
+          "type": "BaseElement"
         }
       ]
     },
@@ -303,7 +2746,7 @@
         {
           "name": "gatewayDirection",
           "type": "GatewayDirection",
-          "default": "Unspecified",
+          "default": "unspecified",
           "isAttr": true
         }
       ]
@@ -323,8 +2766,7 @@
         {
           "name": "eventGatewayType",
           "type": "EventBasedGatewayType",
-          "isAttr": true,
-          "default": "Exclusive"
+          "isAttr": true
         }
       ]
     },
@@ -336,10 +2778,7 @@
       "properties": [
         {
           "name": "activationCondition",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "default",
@@ -407,13 +2846,13 @@
           "isAttr": true
         },
         {
-          "name": "source",
+          "name": "sources",
           "isMany": true,
           "isReference": true,
           "type": "Element"
         },
         {
-          "name": "target",
+          "name": "targets",
           "isMany": true,
           "isReference": true,
           "type": "Element"
@@ -431,19 +2870,20 @@
           "isId": true
         },
         {
-          "name": "documentation",
-          "type": "Documentation",
-          "isMany": true
-        },
-        {
           "name": "extensionDefinitions",
           "type": "ExtensionDefinition",
           "isMany": true,
           "isReference": true
         },
         {
-          "name": "extensionElements",
-          "type": "ExtensionElements"
+          "name": "extensionValues",
+          "type": "ExtensionAttributeValue",
+          "isMany": true
+        },
+        {
+          "name": "documentation",
+          "type": "Documentation",
+          "isMany": true
         }
       ]
     },
@@ -458,9 +2898,7 @@
         },
         {
           "name": "definition",
-          "type": "ExtensionDefinition",
-          "isAttr": true,
-          "isReference": true
+          "type": "ExtensionDefinition"
         }
       ]
     },
@@ -507,7 +2945,7 @@
       ]
     },
     {
-      "name": "ExtensionElements",
+      "name": "ExtensionAttributeValue",
       "properties": [
         {
           "name": "valueRef",
@@ -516,9 +2954,8 @@
           "type": "Element"
         },
         {
-          "name": "values",
-          "type": "Element",
-          "isMany": true
+          "name": "value",
+          "type": "Element"
         },
         {
           "name": "extensionAttributeDefinition",
@@ -536,8 +2973,8 @@
       "properties": [
         {
           "name": "text",
-          "type": "String",
-          "isBody": true
+          "isAttr": true,
+          "type": "String"
         },
         {
           "name": "textFormat",
@@ -602,29 +3039,29 @@
       ],
       "properties": [
         {
+          "name": "inputSet",
+          "type": "InputSet"
+        },
+        {
+          "name": "eventDefinitionRefs",
+          "type": "EventDefinition",
+          "isMany": true,
+          "isReference": true
+        },
+        {
+          "name": "dataInputAssociation",
+          "type": "DataInputAssociation",
+          "isMany": true
+        },
+        {
           "name": "dataInputs",
           "type": "DataInput",
           "isMany": true
         },
         {
-          "name": "dataInputAssociations",
-          "type": "DataInputAssociation",
-          "isMany": true
-        },
-        {
-          "name": "inputSet",
-          "type": "InputSet"
-        },
-        {
           "name": "eventDefinitions",
           "type": "EventDefinition",
           "isMany": true
-        },
-        {
-          "name": "eventDefinitionRef",
-          "type": "EventDefinition",
-          "isMany": true,
-          "isReference": true
         }
       ]
     },
@@ -638,8 +3075,22 @@
         {
           "name": "parallelMultiple",
           "isAttr": true,
-          "type": "Boolean",
-          "default": false
+          "type": "Boolean"
+        },
+        {
+          "name": "outputSet",
+          "type": "OutputSet"
+        },
+        {
+          "name": "eventDefinitionRefs",
+          "type": "EventDefinition",
+          "isMany": true,
+          "isReference": true
+        },
+        {
+          "name": "dataOutputAssociation",
+          "type": "DataOutputAssociation",
+          "isMany": true
         },
         {
           "name": "dataOutputs",
@@ -647,24 +3098,9 @@
           "isMany": true
         },
         {
-          "name": "dataOutputAssociations",
-          "type": "DataOutputAssociation",
-          "isMany": true
-        },
-        {
-          "name": "outputSet",
-          "type": "OutputSet"
-        },
-        {
           "name": "eventDefinitions",
           "type": "EventDefinition",
           "isMany": true
-        },
-        {
-          "name": "eventDefinitionRef",
-          "type": "EventDefinition",
-          "isMany": true,
-          "isReference": true
         }
       ]
     },
@@ -754,9 +3190,6 @@
           "isAttr": true,
           "type": "String"
         }
-      ],
-      "superClass": [
-        "RootElement"
       ]
     },
     {
@@ -768,8 +3201,7 @@
         {
           "name": "waitForCompletion",
           "isAttr": true,
-          "type": "Boolean",
-          "default": true
+          "type": "Boolean"
         },
         {
           "name": "activityRef",
@@ -787,24 +3219,15 @@
       "properties": [
         {
           "name": "timeDate",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "timeCycle",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "timeDuration",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         }
       ]
     },
@@ -861,10 +3284,7 @@
       "properties": [
         {
           "name": "condition",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         }
       ]
     },
@@ -945,27 +3365,25 @@
       ],
       "properties": [
         {
-          "name": "sourceRef",
-          "type": "ItemAwareElement",
-          "isMany": true,
-          "isReference": true
-        },
-        {
-          "name": "targetRef",
-          "type": "ItemAwareElement",
-          "isReference": true
-        },
-        {
           "name": "transformation",
-          "type": "FormalExpression",
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "FormalExpression"
         },
         {
           "name": "assignment",
           "type": "Assignment",
           "isMany": true
+        },
+        {
+          "name": "targetRef",
+          "type": "ItemAwareElement",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "sourceRef",
+          "type": "ItemAwareElement",
+          "isMany": true,
+          "isReference": true
         }
       ]
     },
@@ -987,24 +3405,24 @@
           "type": "Boolean"
         },
         {
-          "name": "inputSetRef",
+          "name": "inputSetRefs",
           "type": "InputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
           "name": "inputSetWithOptional",
           "type": "InputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
           "name": "inputSetWithWhileExecuting",
           "type": "InputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         }
       ]
@@ -1027,24 +3445,24 @@
           "type": "Boolean"
         },
         {
-          "name": "outputSetRef",
+          "name": "outputSetRefs",
           "type": "OutputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
           "name": "outputSetWithOptional",
           "type": "OutputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
           "name": "outputSetWithWhileExecuting",
           "type": "OutputSet",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         }
       ]
@@ -1155,16 +3573,6 @@
       ],
       "properties": [
         {
-          "name": "dataInputs",
-          "type": "DataInput",
-          "isMany": true
-        },
-        {
-          "name": "dataOutputs",
-          "type": "DataOutput",
-          "isMany": true
-        },
-        {
           "name": "inputSets",
           "type": "InputSet",
           "isMany": true
@@ -1172,6 +3580,16 @@
         {
           "name": "outputSets",
           "type": "OutputSet",
+          "isMany": true
+        },
+        {
+          "name": "dataInputs",
+          "type": "DataInput",
+          "isMany": true
+        },
+        {
+          "name": "dataOutputs",
+          "type": "DataOutput",
           "isMany": true
         }
       ]
@@ -1222,17 +3640,11 @@
       "properties": [
         {
           "name": "from",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "to",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         }
       ]
     },
@@ -1388,7 +3800,7 @@
           "type": "String"
         },
         {
-          "name": "participantRef",
+          "name": "participantRefs",
           "type": "Participant",
           "isMany": true,
           "isReference": true
@@ -1521,14 +3933,6 @@
       "name": "Expression",
       "superClass": [
         "BaseElement"
-      ],
-      "isAbstract": false,
-      "properties": [
-        {
-          "name": "body",
-          "type": "String",
-          "isBody": true
-        }
       ]
     },
     {
@@ -1541,6 +3945,11 @@
           "name": "language",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "body",
+          "isAttr": true,
+          "type": "Element"
         },
         {
           "name": "evaluatesToTypeRef",
@@ -1582,8 +3991,8 @@
         },
         {
           "name": "structureRef",
-          "type": "String",
-          "isAttr": true
+          "isAttr": true,
+          "type": "Element"
         },
         {
           "name": "isCollection",
@@ -1640,10 +4049,7 @@
         },
         {
           "name": "conditionExpression",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "sourceRef",
@@ -1667,13 +4073,13 @@
       ],
       "properties": [
         {
-          "name": "laneSets",
-          "type": "LaneSet",
+          "name": "flowElements",
+          "type": "FlowElement",
           "isMany": true
         },
         {
-          "name": "flowElements",
-          "type": "FlowElement",
+          "name": "laneSets",
+          "type": "LaneSet",
           "isMany": true
         }
       ]
@@ -1692,13 +4098,10 @@
         },
         {
           "name": "ioSpecification",
-          "type": "InputOutputSpecification",
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "InputOutputSpecification"
         },
         {
-          "name": "supportedInterfaceRef",
+          "name": "supportedInterfaceRefs",
           "type": "Interface",
           "isMany": true,
           "isReference": true
@@ -1706,10 +4109,7 @@
         {
           "name": "ioBinding",
           "type": "InputOutputBinding",
-          "isMany": true,
-          "xml": {
-            "serialize": "property"
-          }
+          "isMany": true
         }
       ]
     },
@@ -1721,13 +4121,13 @@
       ],
       "properties": [
         {
-          "name": "incoming",
+          "name": "outgoing",
           "type": "SequenceFlow",
           "isMany": true,
           "isReference": true
         },
         {
-          "name": "outgoing",
+          "name": "incoming",
           "type": "SequenceFlow",
           "isMany": true,
           "isReference": true
@@ -1735,8 +4135,8 @@
         {
           "name": "lanes",
           "type": "Lane",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         }
       ]
@@ -1896,15 +4296,15 @@
         {
           "name": "incomingConversationLinks",
           "type": "ConversationLink",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
           "name": "outgoingConversationLinks",
           "type": "ConversationLink",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         }
       ]
@@ -1922,7 +4322,7 @@
           "type": "String"
         },
         {
-          "name": "interfaceRef",
+          "name": "interfaceRefs",
           "type": "Interface",
           "isMany": true,
           "isReference": true
@@ -1970,19 +4370,16 @@
       "properties": [
         {
           "name": "minimum",
-          "default": 0,
+          "default": "0",
           "isAttr": true,
           "type": "Integer"
         },
         {
           "name": "maximum",
-          "default": 1,
+          "default": "1",
           "isAttr": true,
           "type": "Integer"
         }
-      ],
-      "superClass": [
-        "BaseElement"
       ]
     },
     {
@@ -2002,28 +4399,15 @@
           "type": "Boolean"
         },
         {
-          "name": "participants",
-          "type": "Participant",
-          "isMany": true
-        },
-        {
-          "name": "messageFlows",
-          "type": "MessageFlow",
-          "isMany": true
+          "name": "choreographyRef",
+          "type": "Choreography",
+          "isMany": true,
+          "isReference": true
         },
         {
           "name": "artifacts",
           "type": "Artifact",
           "isMany": true
-        },
-        {
-          "name": "conversations",
-          "type": "ConversationNode",
-          "isMany": true
-        },
-        {
-          "name": "conversationAssociations",
-          "type": "ConversationAssociation"
         },
         {
           "name": "participantAssociations",
@@ -2036,15 +4420,28 @@
           "isMany": true
         },
         {
+          "name": "conversationAssociations",
+          "type": "ConversationAssociation"
+        },
+        {
+          "name": "participants",
+          "type": "Participant",
+          "isMany": true
+        },
+        {
+          "name": "messageFlows",
+          "type": "MessageFlow",
+          "isMany": true
+        },
+        {
           "name": "correlationKeys",
           "type": "CorrelationKey",
           "isMany": true
         },
         {
-          "name": "choreographyRef",
-          "type": "Choreography",
-          "isMany": true,
-          "isReference": true
+          "name": "conversations",
+          "type": "ConversationNode",
+          "isMany": true
         },
         {
           "name": "conversationLinks",
@@ -2061,7 +4458,7 @@
       ],
       "properties": [
         {
-          "name": "participantRef",
+          "name": "participantRefs",
           "type": "Participant",
           "isMany": true,
           "isReference": true
@@ -2135,8 +4532,8 @@
     {
       "name": "Choreography",
       "superClass": [
-        "Collaboration",
-        "FlowElementsContainer"
+        "FlowElementsContainer",
+        "Collaboration"
       ]
     },
     {
@@ -2161,6 +4558,7 @@
       "properties": [
         {
           "name": "text",
+          "isAttr": true,
           "type": "String"
         },
         {
@@ -2244,8 +4642,8 @@
         {
           "name": "categorizedFlowElements",
           "type": "FlowElement",
-          "isVirtual": true,
           "isMany": true,
+          "isVirtual": true,
           "isReference": true
         },
         {
@@ -2269,28 +4667,34 @@
           "type": "Boolean"
         },
         {
+          "name": "loopCharacteristics",
+          "type": "LoopCharacteristics"
+        },
+        {
+          "name": "resources",
+          "type": "ResourceRole",
+          "isMany": true
+        },
+        {
           "name": "default",
           "type": "SequenceFlow",
           "isAttr": true,
           "isReference": true
         },
         {
+          "name": "properties",
+          "type": "Property",
+          "isMany": true
+        },
+        {
           "name": "ioSpecification",
-          "type": "InputOutputSpecification",
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "InputOutputSpecification"
         },
         {
           "name": "boundaryEventRefs",
           "type": "BoundaryEvent",
           "isMany": true,
           "isReference": true
-        },
-        {
-          "name": "properties",
-          "type": "Property",
-          "isMany": true
         },
         {
           "name": "dataInputAssociations",
@@ -2304,24 +4708,15 @@
         },
         {
           "name": "startQuantity",
-          "default": 1,
+          "default": "1",
           "isAttr": true,
           "type": "Integer"
-        },
-        {
-          "name": "resources",
-          "type": "ResourceRole",
-          "isMany": true
         },
         {
           "name": "completionQuantity",
-          "default": 1,
+          "default": "1",
           "isAttr": true,
           "type": "Integer"
-        },
-        {
-          "name": "loopCharacteristics",
-          "type": "LoopCharacteristics"
         }
       ]
     },
@@ -2348,8 +4743,7 @@
       "name": "SubProcess",
       "superClass": [
         "Activity",
-        "FlowElementsContainer",
-        "InteractionNode"
+        "FlowElementsContainer"
       ],
       "properties": [
         {
@@ -2392,46 +4786,36 @@
         },
         {
           "name": "loopCardinality",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "loopDataInputRef",
           "type": "ItemAwareElement",
+          "isAttr": true,
           "isReference": true
         },
         {
           "name": "loopDataOutputRef",
           "type": "ItemAwareElement",
+          "isAttr": true,
           "isReference": true
         },
         {
           "name": "inputDataItem",
-          "type": "DataInput",
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "DataInput"
         },
         {
           "name": "outputDataItem",
-          "type": "DataOutput",
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "DataOutput"
+        },
+        {
+          "name": "completionCondition",
+          "type": "Expression"
         },
         {
           "name": "complexBehaviorDefinition",
           "type": "ComplexBehaviorDefinition",
           "isMany": true
-        },
-        {
-          "name": "completionCondition",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
         },
         {
           "name": "oneBehaviorEventRef",
@@ -2461,15 +4845,11 @@
         },
         {
           "name": "loopCondition",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "loopMaximum",
-          "type": "Integer",
-          "isAttr": true
+          "type": "Expression"
         }
       ]
     },
@@ -2480,9 +4860,10 @@
       ],
       "properties": [
         {
-          "name": "calledElement",
-          "type": "String",
-          "isAttr": true
+          "name": "calledElementRef",
+          "type": "CallableElement",
+          "isAttr": true,
+          "isReference": true
         }
       ]
     },
@@ -2562,6 +4943,7 @@
         },
         {
           "name": "script",
+          "isAttr": true,
           "type": "String"
         }
       ]
@@ -2587,10 +4969,7 @@
       "properties": [
         {
           "name": "completionCondition",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "ordering",
@@ -2679,6 +5058,7 @@
         {
           "name": "resourceRef",
           "type": "Resource",
+          "isAttr": true,
           "isReference": true
         },
         {
@@ -2702,10 +5082,7 @@
       "properties": [
         {
           "name": "expression",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         },
         {
           "name": "parameterRef",
@@ -2713,9 +5090,6 @@
           "isAttr": true,
           "isReference": true
         }
-      ],
-      "superClass": [
-        "BaseElement"
       ]
     },
     {
@@ -2723,14 +5097,8 @@
       "properties": [
         {
           "name": "expression",
-          "type": "Expression",
-          "xml": {
-            "serialize": "xsi:type"
-          }
+          "type": "Expression"
         }
-      ],
-      "superClass": [
-        "BaseElement"
       ]
     },
     {
@@ -2792,6 +5160,11 @@
           "isMany": true
         },
         {
+          "name": "relationships",
+          "type": "Relationship",
+          "isMany": true
+        },
+        {
           "name": "rootElements",
           "type": "RootElement",
           "isMany": true
@@ -2805,11 +5178,6 @@
           "name": "exporter",
           "isAttr": true,
           "type": "String"
-        },
-        {
-          "name": "relationships",
-          "type": "Relationship",
-          "isMany": true
         },
         {
           "name": "exporterVersion",
@@ -2949,10 +5317,5 @@
         }
       ]
     }
-  ],
-  "prefix": "bpmn",
-  "xml": {
-    "tagAlias": "lowerCase",
-    "typePrefix": "t"
-  }
+  ]
 }
